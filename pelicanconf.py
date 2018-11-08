@@ -13,6 +13,8 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
+PLUGINS = ['sitemap']
+PLUGIN_PATHS = ['vendor/plugins']
 SITENAME = 'blog'
 SITEURL = ''
 
@@ -64,3 +66,8 @@ DEFAULT_PAGINATION = 10
 #
 DEFAULT_LANG = 'ja'
 
+
+#
+# Plugins
+#
+SITEMAP = { 'format': 'xml' }
