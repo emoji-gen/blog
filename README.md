@@ -3,6 +3,7 @@
 ## Requirements
 
 - Python `$(cat .python-version)`
+- Node `$(cat .node-version)`
 
 ## Libraries
 
