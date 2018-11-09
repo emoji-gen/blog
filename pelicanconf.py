@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*- #
 
 from __future__ import unicode_literals
+
+import os
 from unidecode import unidecode
 
 
@@ -16,7 +18,11 @@ PATH = 'content'
 PLUGINS = ['sitemap']
 PLUGIN_PATHS = ['vendor/plugins']
 SITENAME = 'blog'
-SITEURL = ''
+
+if os.getenv('PYTHON_ENV') == 'production':
+    SITEURL = 'https://emoji-gen.ninja/blog'
+else:
+    SITEURL = ''
 
 
 #
