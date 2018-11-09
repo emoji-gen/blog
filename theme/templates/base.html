@@ -31,6 +31,15 @@
 
   <body>
     <section class="blog">
+      {# heading #}
+      <section class="blog__heading">
+        {% if articles_page %}
+          <h1><a href="{{ SITEURL }}/" rel="bookmark">{{ SITENAME }}</a></h1>
+        {% else %}
+          <h2><a href="{{ SITEURL }}/" rel="bookmark">{{ SITENAME }}</a></h2>
+        {% endif %}
+      </section>
+
       <section class="blog__content">
         {% block content %}
         {% endblock %}
