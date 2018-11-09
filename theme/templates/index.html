@@ -21,21 +21,5 @@
   </section>
 
   {# JSON-LD #}
-  {% if articles_page.number == 1 %}
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "{{ SITEURL }}/"
-      }
-    </script>
-  {% else %}
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html"
-      }
-    </script>
-  {% endif %}
+  {% include 'includes/index_structured_data.html' %}
 {% endblock %}

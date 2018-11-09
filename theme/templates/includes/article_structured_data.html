@@ -1,0 +1,10 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "@id": "{{ SITEURL }}/{{ article.url }}",
+    "datePublished": "{{ article.date.isoformat() }}",
+    "headline": "{{ article.title }} - {{ SITENAME }}",
+    "description": "{{ article.summary|striptags }}"
+  }
+</script>
