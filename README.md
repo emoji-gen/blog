@@ -8,6 +8,7 @@
 ## Libraries
 
 - [Pelican](https://github.com/getpelican/pelican)
+- [Pure](https://purecss.io/)
 
 ## Getting started
 
