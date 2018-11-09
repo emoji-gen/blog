@@ -1,0 +1,21 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+$_color_text_primary: rgb(80, 80, 80);
+
+.header {
+  @include box;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  width: $dimen-content-width;
+
+  h1, h2 {
+    font-size: $font-xlarge;
+  }
+  a {
+    letter-spacing: 6px;
+    text-decoration: none;
+    color: $_color_text_primary;
+  }
+}

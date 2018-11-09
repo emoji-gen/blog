@@ -1,0 +1,12 @@
+<header class="header">
+  {% if articles_page %}
+    <h1>
+      <a href="{{ SITEURL }}/" rel="bookmark">
+        絵文字 ジェネレーター<br>
+        開発者ブログ
+      </a>
+    </h1>
+  {% else %}
+    <h2><a href="{{ SITEURL }}/" rel="bookmark">{{ SITENAME }}</a></h2>
+  {% endif %}
+</header>

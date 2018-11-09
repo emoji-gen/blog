@@ -1,0 +1,8 @@
+@import 'includes/variables';
+
+@mixin box {
+  margin: 30px auto 30px auto;
+  width: $dimen-content-width;
+  background-color: $color_background-white;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
