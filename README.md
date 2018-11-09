@@ -19,5 +19,12 @@ $ make       # build
 $ make serve # run dev server
 ```
 
+## Deployment
+
+```
+$ make build-prod # build for production
+$ make deploy     # deployment
+```
+
 ## License
 MIT &copy; Emoji Generator

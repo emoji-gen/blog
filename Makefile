@@ -13,6 +13,11 @@ build:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 
+.PHONY: build-prod
+build-prod:
+	PYTHON_ENV=production $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
+
 .PHONY: clean
 	rm -rf $(OUTPUTDIR)
 
