@@ -15,7 +15,7 @@ DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap']
 PLUGIN_PATHS = ['vendor/plugins']
-SITENAME = '絵文字ジェネレーター 開発ブログ'
+SITENAME = '絵文字ジェネレーター 開発者ブログ'
 
 if os.getenv('PYTHON_ENV') == 'production':
     SITEURL = 'https://emoji-gen.ninja/blog'

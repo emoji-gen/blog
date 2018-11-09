@@ -3,7 +3,7 @@
 
 {% block title %}
   {% if articles_page.number == 1 %}
-    {{ SITENAME }} - チャットツール向け絵文字を簡単生成
+    {{ SITENAME }} - チャット向け絵文字生成サービス
   {% else %}
     記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }}
   {% endif %}
@@ -25,6 +25,7 @@
         <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 
         <div class="index__article__summary">{{ article.summary }}</div>
+
       </div>
     {% endfor %}
   </section>
