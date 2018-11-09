@@ -1,19 +1,63 @@
 {% extends "base.html" %}
 
+
 {% block head %}
   {{ super() }}
+  <meta name="twitter:title" content="{{ SITENAME }}">
+  <meta property="og:title" content="{{ SITENAME }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}/">
+  {# <meta property="og:description" content=""> #}
+
+  {% if articles_page.number == 1 %}
+    <link rel="canonical" href="{{ SITEURL }}/">
+  {% else %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html">
+  {% endif %}
+
+  {% if articles_page.has_previous() %}
+    {% if articles_page.previous_page_number() == 1 %}
+      <link rel="prev" href="{{ SITEURL }}/">
+    {% else %}
+      <link rel="prev" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">
+    {% endif %}
+  {% endif %}
+
+  {% if articles_page.has_next() %}
+    <link rel="next" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">
+  {% endif %}
 {% endblock %}
+
 
 {% block content %}
   <section class="index">
     {% for article in articles_page.object_list %}
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+      <div class="index__article">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
 
-      <time datetime="{{ article.date.isoformat() }}">
-        {{ article.locale_date }}
-      </time>
+        <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 
-      <div class="index__article__summary">{{ article.summary }}</div>
+        <div class="index__article__summary">{{ article.summary }}</div>
+      </div>
     {% endfor %}
   </section>
+
+  {# JSON-LD #}
+  {% if articles_page.number == 1 %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ SITEURL }}/"
+      }
+    </script>
+  {% else %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html"
+      }
+    </script>
+  {% endif %}
 {% endblock %}

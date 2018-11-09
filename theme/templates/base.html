@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
-  <head>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.ico">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/style.css">
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+    {# Google Analytics #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82501423-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-82501423-1');
+    </script>
     {% endblock %}
+
+    {# Meta/OGP #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@emoji_gen">
+    <meta name="twitter:image" content="https://emoji-gen.ninja/static/img/ogp_summary.png">
+    <meta name="twitter:image:alt" content="{{ SITENAME }}">
+    <meta property="fb:app_id" content="1668136526839121">
+    <meta property="og:image" content="https://emoji-gen.ninja/static/img/ogp_summary.png">
+    <meta property="og:site_name" content="{{ SITENAME }}" />
+    <meta property="og:locale" content="ja_JP">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
   </head>
 
   <body>
