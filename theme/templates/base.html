@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    {% endblock %}
+  </head>
+
+  <body>
+    <section class="content">
+      {% block content %}
+      {% endblock %}
+    </section>
+  </body>
+</html>

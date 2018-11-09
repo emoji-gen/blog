@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <section class="index">
+    {% for article in articles_page.object_list %}
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+
+      <time datetime="{{ article.date.isoformat() }}">
+        {{ article.locale_date }}
+      </time>
+
+      <div class="index__summary">{{ article.summary }}</div>
+    {% endfor %}
+  </section>
+{% endblock %}

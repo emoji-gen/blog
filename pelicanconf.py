@@ -72,6 +72,12 @@ DEFAULT_LANG = 'ja'
 
 
 #
+# Themes
+#
+THEME = 'theme'
+
+
+#
 # Plugins
 #
 MINIFY = {

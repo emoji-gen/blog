@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} | {{ super() }}{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <section class="article">
+    <h1>{{ article.title }}</h1>
+
+    <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+
+    {{ article.content }}
+  </section>
+{% endblock %}
