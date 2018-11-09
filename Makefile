@@ -8,13 +8,27 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 
 
-.PHONY: html
-html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+.PHONY: default
+default: theme-prod html-prod
 
 
-.PHONY: html-prod
-html-prod:
+.PHONY: theme
+theme:
+	cd theme && yarn start
+
+
+.PHONY: theme-prod
+theme-prod:
+	cd theme && yarn run build
+
+
+.PHONY: content
+content:
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) -r $(PELICANOPTS)
+
+
+.PHONY: content-prod
+content-prod:
 	PYTHON_ENV=production $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 

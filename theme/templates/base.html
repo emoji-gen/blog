@@ -4,15 +4,18 @@
     {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico">
+    <link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.ico">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/style.css">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     {% endblock %}
   </head>
 
   <body>
-    <section class="content">
-      {% block content %}
-      {% endblock %}
+    <section class="blog">
+      <section class="blog__content">
+        {% block content %}
+        {% endblock %}
+      </section>
     </section>
   </body>
 </html>

@@ -15,15 +15,16 @@ $ python -m venv venv
 $ . venv/bin/activate
 $ pip install -r requirements-dev.txt
 
-$ make       # Build HTML
-$ make serve # Run dev server
+$ make theme   # Build theme with auto-reload
+$ make content # Build content with auto-reload
+$ make serve   # Run dev server
 ```
 
 ## Deployment
 
 ```
-$ make html-prod # Build HTML for production
-$ make deploy    # Deployment
+$ make        # Build for production
+$ make deploy # Deployment
 ```
 
 ## License
