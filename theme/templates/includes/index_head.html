@@ -1,8 +1,15 @@
-<meta name="twitter:title" content="{{ SITENAME }}">
-<meta property="og:title" content="{{ SITENAME }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ SITEURL }}/">
 {# <meta property="og:description" content=""> #}
+
+{% if articles_page.number == 1 %}
+  <meta name="twitter:title" content="{{ SITENAME }}">
+  <meta property="og:title" content="{{ SITENAME }}">
+  <meta property="og:url" content="{{ SITEURL }}/">
+{% else %}
+  <meta name="twitter:title" content="記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }}">
+  <meta property="og:title" content="記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }} ">
+  <meta property="og:url" content="{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html">
+{% endif %}
 
 
 {% if articles_page.number == 1 %}

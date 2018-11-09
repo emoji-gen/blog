@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
 
+{% block title %}
+  {% if articles_page.number == 1 %}
+    {{ SITENAME }}
+  {% else %}
+    記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }}
+  {% endif %}
+{% endblock %}
+
+
 {% block head %}
   {{ super() }}
   {% include 'includes/index_head.html' %}
