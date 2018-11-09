@@ -15,15 +15,15 @@ $ python -m venv venv
 $ . venv/bin/activate
 $ pip install -r requirements-dev.txt
 
-$ make       # build
-$ make serve # run dev server
+$ make       # Build HTML
+$ make serve # Run dev server
 ```
 
 ## Deployment
 
 ```
-$ make build-prod # build for production
-$ make deploy     # deployment
+$ make html-prod # Build HTML for production
+$ make deploy    # Deployment
 ```
 
 ## License
