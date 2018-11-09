@@ -5,17 +5,26 @@ $_color_text_primary: rgb(80, 80, 80);
 
 .header {
   @include box;
+  position: relative;
   display: flex;
-  align-items: center;
-  padding: 20px 30px;
+  justify-content: center;
+  padding: 40px 50px;
   width: $dimen-content-width;
 
-  h1, h2 {
-    font-size: $font-xlarge;
-  }
-  a {
-    letter-spacing: 6px;
-    text-decoration: none;
-    color: $_color_text_primary;
+  &__title {
+    &__text {
+      margin: 0;
+      padding: 0 90px 0 0;
+      line-height: 1.8;
+      letter-spacing: 6px;
+      text-align: right;
+      background: url($theme-url + '/images/gears.png') right center / 60px auto no-repeat;
+      font-size: $font-xlarge;
+
+      a {
+        text-decoration: none;
+        color: $_color_text_primary;
+      }
+    }
   }
 }

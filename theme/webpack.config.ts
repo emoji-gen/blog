@@ -10,6 +10,9 @@ import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 const isDev = process.argv.indexOf('--watch') > -1
 const mode = isDev ? 'development' : 'production'
 
+const siteUrl = isDev ? '/blog' : 'https://emoji-gen.ninja/blog'
+const themeUrl = siteUrl + '/theme'
+
 const configuration: webpack.Configuration = {
   mode,
 
@@ -47,6 +50,10 @@ const configuration: webpack.Configuration = {
           {
             loader: 'sass-loader',
             options: {
+              data: `
+                $site-url: ${siteUrl};
+                $theme-url: ${themeUrl};
+              `,
               includePaths: [ join(__dirname, 'src') ],
             },
           },
