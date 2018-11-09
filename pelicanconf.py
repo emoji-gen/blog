@@ -20,7 +20,7 @@ SITENAME = '絵文字ジェネレーター 開発ブログ'
 if os.getenv('PYTHON_ENV') == 'production':
     SITEURL = 'https://emoji-gen.ninja/blog'
 else:
-    SITEURL = ''
+    SITEURL = '/blog'
 
 
 #

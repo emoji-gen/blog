@@ -29,8 +29,10 @@ $ make serve   # Run dev server
 ## Deployment
 
 ```
-$ make        # Build for production
-$ make deploy # Deployment
+$ npm install -g firebase-tools
+
+$ make            # Build for production
+$ firebase deploy # Deployment
 ```
 
 ## License

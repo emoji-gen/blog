@@ -7,3 +7,6 @@ venv
 
 # Pelican
 output
+
+# Firebase
+.firebase

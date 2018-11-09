@@ -4,12 +4,13 @@ PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
+PUBLICDIR=$(BASEDIR)/output
+OUTPUTDIR=$(BASEDIR)/output/blog
 CONFFILE=$(BASEDIR)/pelicanconf.py
 
 
 .PHONY: default
-default: theme-prod html-prod
+default: theme-prod content-prod
 
 
 .PHONY: theme
@@ -39,10 +40,10 @@ content-prod:
 .PHONY: serve
 serve:
 ifdef PORT
-	@echo Serving on port $(PORT) ...
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
+	@echo Serving http://0.0.0.0:$(PORT)/blog/ ...
+	cd $(PUBLICDIR) && $(PY) -m pelican.server $(PORT)
 else
-	@echo Serving on port 8000 ...
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
+	@echo Serving on http://0.0.0.0:8000/blog/ ...
+	cd $(PUBLICDIR) && $(PY) -m pelican.server 8000
 endif
 
