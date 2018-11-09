@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/style.css">
 
     {# Google Analytics #}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82501423-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-82501423-1');
-    </script>
-    {% endblock %}
+    {% include 'includes/base_gtag.html' %}
 
     {# Meta/OGP #}
     <meta name="twitter:card" content="summary_large_image">
@@ -27,6 +20,7 @@
     <meta property="og:site_name" content="{{ SITENAME }}" />
     <meta property="og:locale" content="ja_JP">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    {% endblock %}
   </head>
 
   <body>
