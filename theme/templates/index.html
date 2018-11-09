@@ -17,18 +17,9 @@
 
 
 {% block content %}
-  <section class="index">
-    {% for article in articles_page.object_list %}
-      <div class="index__article">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
-
-        <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
-
-        <div class="index__article__summary">{{ article.summary }}</div>
-
-      </div>
-    {% endfor %}
-  </section>
+  <div class="index">
+    {% include 'includes/index_summaries.html' %}
+  </div>
 
   {# JSON-LD #}
   {% include 'includes/index_structured_data.html' %}

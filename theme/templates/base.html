@@ -25,13 +25,18 @@
 
   <body>
     <section class="blog">
-      <section class="blog__header">
+      <div class="blog__header">
         {% include 'includes/base_header.html' %}
-      </section>
+      </div>
 
-      <section class="blog__content">
-        {% block content %}
-        {% endblock %}
+      <div class="blog__body">
+        <div class="blog__body__content">
+          {% block content %}
+          {% endblock %}
+        </div>
+        <div class="blog__body__sidebar">
+          {% include 'includes/base_sidebar.html' %}
+        </div>
       </section>
     </section>
   </body>

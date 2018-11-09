@@ -8,10 +8,15 @@ $_color_text_primary: rgb(80, 80, 80);
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 40px 50px;
+  padding: 35px 50px;
   width: $dimen-content-width;
+  box-sizing: border-box;
 
   &__title {
+    a {
+      text-decoration: none;
+      color: $_color_text_primary;
+    }
     &__text {
       margin: 0;
       padding: 0 90px 0 0;
@@ -20,11 +25,7 @@ $_color_text_primary: rgb(80, 80, 80);
       text-align: right;
       background: url($theme-url + '/images/gears.png') right center / 60px auto no-repeat;
       font-size: $font-xlarge;
-
-      a {
-        text-decoration: none;
-        color: $_color_text_primary;
-      }
+      font-weight: bold;
     }
   }
 }

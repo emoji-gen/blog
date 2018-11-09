@@ -1,8 +1,22 @@
 @import 'includes/variables';
+@import 'includes/mixins';
 
 .blog {
   &__header {
     margin: 40px 0 0;
+  }
+
+  &__body {
+    display: flex;
+    margin: 30px auto 0;
+    width: $dimen-content-width;
+    &__content {
+      flex: 1 1 auto;
+    }
+    &__sidebar {
+      flex: 0 0 auto;
+      width: 290px;
+    }
   }
 }
 
