@@ -15,7 +15,7 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
-PLUGINS = ['sitemap']
+PLUGINS = ['minify', 'sitemap']
 PLUGIN_PATHS = ['vendor/plugins']
 SITENAME = 'blog'
 
@@ -76,4 +76,8 @@ DEFAULT_LANG = 'ja'
 #
 # Plugins
 #
+MINIFY = {
+    'reduce_boolean_attributes': True,
+    'remove_comments': True,
+}
 SITEMAP = { 'format': 'xml' }

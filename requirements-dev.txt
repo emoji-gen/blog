@@ -1,10 +1,13 @@
 blinker==1.4
 docutils==0.14
 feedgenerator==1.9
+htmlmin==0.1.12
 Jinja2==2.10
+joblib==0.13.0
 Markdown==3.0.1
 MarkupSafe==1.1.0
 pelican==3.7.1
+pelican-minify==0.9
 Pygments==2.2.0
 python-dateutil==2.7.5
 pytz==2018.7
