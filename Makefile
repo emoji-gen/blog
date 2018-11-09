@@ -20,8 +20,10 @@ build:
 .PHONY: serve
 serve:
 ifdef PORT
+	@echo Serving on port $(PORT) ...
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
 else
+	@echo Serving on port 8000 ...
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server
 endif
 
