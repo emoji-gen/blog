@@ -19,6 +19,7 @@ $ . venv/bin/activate
 $ pip install -r requirements-dev.txt
 
 # Setup Node
+$ yarn
 $ cd theme && yarn
 
 # Build
