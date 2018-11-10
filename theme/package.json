@@ -1,5 +1,5 @@
 {
-  "name": "blog-theme",
+  "name": "@emoji-gen/blog-theme",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack"

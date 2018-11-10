@@ -1,0 +1,14 @@
+{
+  "name": "@emoji-gen/blog",
+  "devDependencies": {
+    "foreman": "^3.0.1"
+  },
+  "repository": "https://github.com/emoji-gen/blog.git",
+  "author": {
+    "name": "Emoji Generator",
+    "email": "ultimate.emoji.gen@gmail.com",
+    "url": "https://emoji-gen.ninja"
+  },
+  "license": "MIT",
+  "private": true
+}
