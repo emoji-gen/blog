@@ -12,7 +12,7 @@
 
 ## Getting started
 
-```
+```bash
 # Setup Python
 $ python -m venv venv
 $ . venv/bin/activate
@@ -29,7 +29,7 @@ $ make serve   # Run dev server
 
 ## Deployment
 
-```
+```bash
 $ npm install -g firebase-tools
 
 $ make            # Build for production
