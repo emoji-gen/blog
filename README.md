@@ -37,4 +37,4 @@ $ firebase deploy # Deployment
 ```
 
 ## License
-MIT &copy; Emoji Generator
+MIT &copy; [Emoji Generator](https://emoji-gen.ninja/)
