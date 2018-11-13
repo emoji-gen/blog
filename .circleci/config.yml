@@ -28,6 +28,10 @@ jobs:
           command: |
             yarn
             cd theme && yarn
+      - run:
+          name: Build
+          command: |
+            make
       - save_cache:
           key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
           paths:
