@@ -3,9 +3,11 @@
 import { join } from 'path'
 
 import * as webpack from 'webpack'
+import * as AssetsWebpackPlugin from 'assets-webpack-plugin'
+import * as CleanWebpackPlugin from 'clean-webpack-plugin'
+import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
-import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 
 const isDev = process.argv.indexOf('--watch') > -1
 const mode = isDev ? 'development' : 'production'
@@ -51,8 +53,8 @@ const configuration: webpack.Configuration = {
             loader: 'sass-loader',
             options: {
               data: `
-                $site-url: ${siteUrl};
-                $theme-url: ${themeUrl};
+                $site-url: '${siteUrl}';
+                $theme-url: '${themeUrl}';
               `,
               includePaths: [ join(__dirname, 'src') ],
             },
@@ -89,12 +91,14 @@ const configuration: webpack.Configuration = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'static/style.css',
-    }),
+    new AssetsWebpackPlugin({ filename: 'dist/assets.json' }),
+    new CleanWebpackPlugin([ 'static/*.css' ]),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'static/style.[contenthash].css',
     }),
   ],
 
@@ -102,6 +106,7 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~~~~~~~~~~~~~~~~
   watchOptions: {
     poll: true,
+    ignored: /node_modules/,
   },
 
   // Performance

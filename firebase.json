@@ -29,11 +29,20 @@
         ]
       },
       {
-        "source": "/blog/**/*.@(html|css)",
+        "source": "/blog/**/*.html",
         "headers" : [
           {
             "key" : "Cache-Control",
             "value" : "public, max-age=60"
+          }
+        ]
+      },
+      {
+        "source": "/blog/**/*.css",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "public, immutable, max-age=31536000"
           }
         ]
       },

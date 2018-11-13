@@ -1,17 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+import json
 import os
+from pathlib import Path
 from unidecode import unidecode
 
 
 #
 # Basic settings
 #
+def hashed_assets(name):
+    json_path = str(Path('.').joinpath('theme/dist/assets.json').resolve())
+    with open(json_path, 'r') as fp:
+        assets = json.load(fp)
+        asset_path = assets['main'].get(name)
+        if asset_path:
+            return asset_path.replace('static/', '')
+
 USE_FOLDER_AS_CATEGORY = False
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
+JINJA_FILTERS = {
+    'hashed_assets': hashed_assets,
+}
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap']
 PLUGIN_PATHS = ['vendor/plugins']
