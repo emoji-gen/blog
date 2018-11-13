@@ -74,7 +74,7 @@ AUTHOR_FEED_RSS = None
 #
 # Pagination
 #
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 10
 
 
 #
