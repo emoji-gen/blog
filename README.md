@@ -4,6 +4,7 @@
 
 - Python `$(cat .python-version)`
 - Node `$(cat .node-version)`
+- Yarn
 
 ## Libraries
 
@@ -31,7 +32,7 @@ $ make serve   # Run dev server
 ## Deployment
 
 ```bash
-$ npm install -g firebase-tools
+$ yarn global add firebase-tools
 
 $ make            # Build for production
 $ firebase deploy # Deployment
