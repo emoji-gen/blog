@@ -31,6 +31,10 @@ jobs:
       - run:
           name: Build
           command: |
+            # TODO: moved to Dockerfile
+            apt-get update -qq
+            apt-get install -y -qq make
+
             make
       - save_cache:
           key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
