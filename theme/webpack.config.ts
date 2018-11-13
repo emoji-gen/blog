@@ -106,7 +106,7 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~~~~~~~~~~~~~~~~
   watchOptions: {
     poll: true,
-    ignored: /node_modules/,
+    ignored: [ /node_modules/ ],
   },
 
   // Performance
