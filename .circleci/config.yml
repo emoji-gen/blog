@@ -28,6 +28,8 @@ jobs:
           command: |
             yarn
             cd theme && yarn
+            git checkout yarn.lock
+            git checkout theme/yarn.lock
       - run:
           name: Build
           command: |
