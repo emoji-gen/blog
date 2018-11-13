@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Checkout submodules
           command: |
-            git submodule update --init --recursive --depth=1
+            git submodule update --init --recursive
       - run:
           name: System information
           command: |
