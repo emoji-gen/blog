@@ -45,3 +45,10 @@ jobs:
             - ~/workspace/theme/node_modules
             - ~/.cache/yarn/
             - ~/.cache/pip/
+      - run:
+          name: Deployment
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              yarn global add firebase-tools
+              firebase --version
+            fi
