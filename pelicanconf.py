@@ -60,9 +60,6 @@ DEFAULT_DATE_FORMAT = '%Y/%m/%d'
 # Metadata
 #
 AUTHOR = '絵文字ジェネレーター'
-EXTRA_PATH_METADATA = {
-    'images/favicon.ico': { 'path': 'favicon.ico' },
-}
 
 
 #
