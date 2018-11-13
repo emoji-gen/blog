@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: emojigen/node-py23:node10.12.0-py2.7.15-py3.7.0
+    steps:
+      - checkout
+      - run:
+          name: System information
+          command: |
+            python2 --version
+            python3 --version
+            echo "Node $(node -v)"
+            echo "NPM v$(npm -v)"
+            echo "Yarn v$(yarn --version)"
+      - restore_cache:
+          key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
+      - run:
+          name: Install dependencies (Python)
+          command: |
+            pip3 install -q -r requirements.txt
+      - run:
+          name: Install dependencies (Node)
+          command: |
+            yarn
+            cd theme && yarn
+      - save_cache:
+          key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+            - ~/workspace/theme/node_modules
+            - ~/.cache/yarn/
+            - ~/.cache/pip/
