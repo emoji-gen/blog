@@ -3,7 +3,6 @@
 
 import json
 import os
-from pathlib import Path
 from unidecode import unidecode
 
 
@@ -11,7 +10,7 @@ from unidecode import unidecode
 # Basic settings
 #
 def hashed_assets(name):
-    json_path = str(Path('.').joinpath('theme/dist/assets.json').resolve())
+    json_path = 'theme/dist/assets.json'
     with open(json_path, 'r') as fp:
         assets = json.load(fp)
         asset_path = assets['main'].get(name)
