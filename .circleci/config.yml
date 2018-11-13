@@ -27,7 +27,7 @@ jobs:
           name: Install dependencies (Node)
           command: |
             yarn
-            cd theme && yarn
+            (cd theme && yarn)
             git checkout yarn.lock
             git checkout theme/yarn.lock
       - run:
