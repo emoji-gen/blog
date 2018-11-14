@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "output",
+    "public": "public",
     "headers": [
       {
         "source": "**/*",

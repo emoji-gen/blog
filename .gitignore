@@ -6,7 +6,7 @@ __pycache__
 venv
 
 # Pelican
-output
+public
 
 # Firebase
 .firebase

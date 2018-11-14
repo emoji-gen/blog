@@ -4,8 +4,8 @@ PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
-PUBLICDIR=$(BASEDIR)/output
-OUTPUTDIR=$(BASEDIR)/output/blog
+PUBLICDIR=$(BASEDIR)/public
+OUTPUTDIR=$(BASEDIR)/public/blog
 CONFFILE=$(BASEDIR)/pelicanconf.py
 
 
