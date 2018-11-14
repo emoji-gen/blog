@@ -7,6 +7,13 @@ from unidecode import unidecode
 
 
 #
+# Custom settings
+#
+ENV = os.getenv('PYTHON_ENV', 'development')
+NOINDEX = True # ENV == 'development'
+
+
+#
 # Basic settings
 #
 def hashed_assets(name):
@@ -29,7 +36,7 @@ PLUGINS = ['minify', 'sitemap']
 PLUGIN_PATHS = ['vendor/plugins']
 SITENAME = '絵文字ジェネレーター 開発者ブログ'
 
-if os.getenv('PYTHON_ENV') == 'production':
+if ENV == 'production':
     SITEURL = 'https://emoji-gen.ninja/blog'
 else:
     SITEURL = '/blog'
