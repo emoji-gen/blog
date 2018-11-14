@@ -30,6 +30,8 @@ jobs:
           command: |
             yarn
             (cd theme && yarn)
+
+            # for the `save_cache` step
             git checkout yarn.lock
             git checkout theme/yarn.lock
       - run:
