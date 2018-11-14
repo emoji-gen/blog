@@ -13,6 +13,13 @@ CONFFILE=$(BASEDIR)/pelicanconf.py
 default: theme-prod content-prod
 
 
+.PHONY: dev
+dev:
+	yarn
+	cd theme && yarn
+	node_modules/.bin/nf start
+
+
 .PHONY: theme
 theme:
 	cd theme && yarn start
@@ -25,7 +32,7 @@ theme-prod:
 
 .PHONY: content
 content:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) -r $(PELICANOPTS)
+	PYTHONUNBUFFERED=no $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) -r $(PELICANOPTS)
 
 
 .PHONY: content-prod

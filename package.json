@@ -1,6 +1,7 @@
 {
   "name": "@emoji-gen/blog",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "foreman": "^3.0.1"
   },
   "repository": "https://github.com/emoji-gen/blog.git",

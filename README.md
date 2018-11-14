@@ -23,10 +23,8 @@ $ pip install -r requirements-dev.txt
 $ yarn
 $ cd theme && yarn
 
-# Build
-$ make theme   # Build theme with auto-reload
-$ make content # Build content with auto-reload
-$ make serve   # Run dev server
+# Development
+$ make dev
 ```
 
 ## Deployment
