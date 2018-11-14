@@ -18,6 +18,7 @@ jobs:
             python2 --version
             python3 --version | head -1
             echo "Node $(node -v)"
+            echo "NPM $(npm -v)"
             echo "Yarn v$(yarn --version)"
       - restore_cache:
           key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
