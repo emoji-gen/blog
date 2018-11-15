@@ -24,7 +24,7 @@
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "public, max-age=60"
+            "value" : "public, max-age=10, stale-while-revalidate=60"
           }
         ]
       },
@@ -33,7 +33,7 @@
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "public, max-age=60"
+            "value" : "public, max-age=10, stale-while-revalidate=60"
           }
         ]
       },
@@ -51,7 +51,7 @@
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "public, max-age=600"
+            "value" : "public, max-age=180, stale-while-revalidate=600"
           }
         ]
       },
@@ -60,7 +60,7 @@
         "headers" : [
           {
             "key" : "Cache-Control",
-            "value" : "public, max-age=3600"
+            "value" : "public, max-age=3600, stale-if-error=3600"
           }
         ]
       }
