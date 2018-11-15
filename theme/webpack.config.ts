@@ -98,7 +98,7 @@ const configuration: webpack.Configuration = {
       watchRun() { console.log('Mode: ' + mode) },
     }),
     new MiniCssExtractPlugin({
-      filename: 'static/style.[contenthash].css',
+      filename: 'static/style-[contenthash].css',
     }),
   ],
 
