@@ -1,5 +1,6 @@
 'use strict'
 
+import * as fs from 'fs'
 import { join } from 'path'
 
 import * as webpack from 'webpack'
@@ -9,11 +10,27 @@ import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 
+
+// Detect mode
+//~~~~~~~~~~~~~~~
 const isDev = process.argv.indexOf('--watch') > -1
 const mode = isDev ? 'development' : 'production'
 
-const siteUrl = isDev ? '/blog' : 'https://emoji-gen.ninja/blog'
+// Set SASS variables
+//~~~~~~~~~~~~~~~~~~~~~~
+const confPath = join(__dirname, '..', 'pelicanconf.py')
+const conf = fs.readFileSync(confPath, { encoding: 'utf-8' })
+const prodSiteUrl =
+  conf.split('\n')
+    .map(v => {
+      const matches = v.match(/SITEURL\s*=\s*\'(.*\/\/.*)\'/)
+      return matches ? matches[1] : null
+    })
+    .filter(v => !!v)
+
+const siteUrl = isDev ? '/blog' : prodSiteUrl
 const themeUrl = siteUrl + '/theme'
+
 
 const configuration: webpack.Configuration = {
   mode,
