@@ -6,6 +6,7 @@ jobs:
       - image: emojigen/node-py23:node11.1.0-py2.7.15-py3.7.0
     environment:
       GIT_TERMINAL_PROMPT: 0
+      TZ: Asia/Tokyo
     steps:
       - checkout
       - run:
