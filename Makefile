@@ -32,12 +32,12 @@ theme-prod:
 
 .PHONY: content
 content:
-	PYTHONUNBUFFERED=no $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) -r $(PELICANOPTS)
+	PYTHONUNBUFFERED=no $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) -r $(PELICANOPTS)
 
 
 .PHONY: content-prod
 content-prod:
-	PYTHON_ENV=production $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	PYTHON_ENV=production $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) $(PELICANOPTS)
 
 
 .PHONY: clean
@@ -48,9 +48,9 @@ content-prod:
 serve:
 ifdef PORT
 	@echo Serving on http://0.0.0.0:$(PORT)/blog/ ...
-	cd $(PUBLICDIR) && $(PY) -m pelican.server $(PORT)
+	cd $(PUBLICDIR) && $(PELICAN) --listen --settings $(CONFFILE) --port $(PORT)
 else
 	@echo Serving on http://0.0.0.0:8000/blog/ ...
-	cd $(PUBLICDIR) && $(PY) -m pelican.server 8000
+	cd $(PUBLICDIR) && $(PELICAN) --listen --settings $(CONFFILE)
 endif
 
