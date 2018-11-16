@@ -105,7 +105,7 @@ const configuration: webpack.Configuration = {
   optimization: {
     minimizer: [
       new OptimizeCSSAssetsPlugin({}),
-    ]
+    ],
   },
   plugins: [
     new AssetsWebpackPlugin({ filename: 'dist/assets.json' }),
