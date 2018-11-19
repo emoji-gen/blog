@@ -1,10 +1,32 @@
 <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "@id": "{{ SITEURL }}/{{ article.url }}",
-    "datePublished": "{{ article.date.isoformat() }}",
-    "headline": "{{ article.title }} - {{ SITENAME }}",
-    "description": "{{ article.summary|striptags }}"
-  }
+  [
+    {
+      "@type": "Organization",
+      "@id": "https://emojji-gen.ninja",
+      "name": "絵文字ジェネレーター"
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "@id": "{{ SITEURL }}/{{ article.url }}",
+      "author": {
+        "@id": "https://emoji-gen.ninja"
+      },
+      "publisher": {
+        "@id": "https://emoji-gen.ninja"
+      },
+      "mainEntityOfPage": {
+        "type": "WebPage",
+        "@id": "{{ SITEURL }}/{{ article.url }}"
+      },
+      {% if article.modified %}
+        "dateModified": "{{ article.modified.isoformat() }}",
+      {% else %}
+        "dateModified": "{{ article.date.isoformat() }}",
+      {% endif %}
+      "datePublished": "{{ article.date.isoformat() }}",
+      "headline": "{{ article.title }} - {{ SITENAME }}",
+      "description": "{{ article.summary|striptags }}"
+    }
+  ]
 </script>
