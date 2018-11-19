@@ -10,7 +10,6 @@
       {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "@id": "{{ SITEURL }}/{{ article.url }}",
         "author": {
           "@id": "https://emoji-gen.ninja"
         },
@@ -28,7 +27,8 @@
         {% endif %}
         "datePublished": "{{ article.date.isoformat() }}",
         "headline": "{{ article.title }} - {{ SITENAME }}",
-        "description": "{{ article.summary|striptags }}"
+        "description": "{{ article.summary|striptags }}",
+        "url": "{{ SITEURL }}/{{ article.url }}"
       }
     ]
   </script>
