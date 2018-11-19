@@ -1,17 +1,19 @@
-{% if articles_page.number == 1 %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "url": "{{ SITEURL }}/"
-    }
-  </script>
-{% else %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "url": "{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html"
-    }
-  </script>
-{% endif %}
+{% filter squash %}
+  {% if articles_page.number == 1 %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ SITEURL }}/"
+      }
+    </script>
+  {% else %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html"
+      }
+    </script>
+  {% endif %}
+{% endfilter %}
