@@ -1,36 +1,36 @@
 {% filter squash %}
   <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "@id": "https://emoji-gen.ninja/#organization",
-      "name": "絵文字ジェネレーター",
-      "url": "https://emoji-gen.ninja/"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "BlogPosting",
-      "author": {
-        "@id": "https://emoji-gen.ninja/#organization"
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "@id": "https://emoji-gen.ninja/#organization",
+        "name": "絵文字ジェネレーター",
+        "url": "https://emoji-gen.ninja/"
       },
-      "publisher": {
-        "@id": "https://emoji-gen.ninja/#organization"
-      },
-      "mainEntityOfPage": {
-        "type": "WebPage",
-        "@id": "{{ SITEURL }}/{{ article.url }}"
-      },
-      {% if article.modified %}
-        "dateModified": "{{ article.modified.isoformat() }}",
-      {% else %}
-        "dateModified": "{{ article.date.isoformat() }}",
-      {% endif %}
-      "datePublished": "{{ article.date.isoformat() }}",
-      "headline": "{{ article.title }} - {{ SITENAME }}",
-      "description": "{{ article.summary|striptags }}",
-      "url": "{{ SITEURL }}/{{ article.url }}"
-    }
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+          "@id": "https://emoji-gen.ninja/#organization"
+        },
+        "publisher": {
+          "@id": "https://emoji-gen.ninja/#organization"
+        },
+        "mainEntityOfPage": {
+          "type": "WebPage",
+          "@id": "{{ SITEURL }}/{{ article.url }}"
+        },
+        {% if article.modified %}
+          "dateModified": "{{ article.modified.isoformat() }}",
+        {% else %}
+          "dateModified": "{{ article.date.isoformat() }}",
+        {% endif %}
+        "datePublished": "{{ article.date.isoformat() }}",
+        "headline": "{{ article.title }} - {{ SITENAME }}",
+        "description": "{{ article.summary|striptags }}",
+        "url": "{{ SITEURL }}/{{ article.url }}"
+      }
+    ]
   </script>
 {% endfilter %}
