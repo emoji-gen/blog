@@ -3,6 +3,7 @@
 
 import json
 import os
+import re
 from unidecode import unidecode
 
 
@@ -16,7 +17,7 @@ NOINDEX = True # ENV == 'development'
 #
 # Basic settings
 #
-def hashed_assets(name):
+def do_hashed_assets(name):
     json_path = 'theme/dist/assets.json'
     with open(json_path, 'r') as fp:
         assets = json.load(fp)
@@ -24,12 +25,16 @@ def hashed_assets(name):
         if asset_path:
             return asset_path.replace('static/', '')
 
+def do_squash(value):
+    return re.sub(r'\s+', ' ', value)
+
 USE_FOLDER_AS_CATEGORY = False
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
 JINJA_FILTERS = {
-    'hashed_assets': hashed_assets,
+    'hashed_assets': do_hashed_assets,
+    'squash': do_squash,
 }
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap']
