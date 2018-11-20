@@ -38,7 +38,7 @@
         ]
       },
       {
-        "source": "/blog/**/*.css",
+        "source": "/blog/**/*.@(css|js)",
         "headers" : [
           {
             "key" : "Cache-Control",

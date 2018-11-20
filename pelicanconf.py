@@ -18,7 +18,7 @@ NOINDEX = True # ENV == 'development'
 # Basic settings
 #
 def do_hashed_assets(name):
-    json_path = 'theme/dist/assets.json'
+    json_path = 'theme/assets.json'
     with open(json_path, 'r') as fp:
         assets = json.load(fp)
         asset_path = assets['main'].get(name)

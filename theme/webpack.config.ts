@@ -44,7 +44,7 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~
   output: {
     path: __dirname,
-    filename: 'dist/main.js',
+    filename: 'static/script-[contenthash].js',
   },
 
   // Module
@@ -108,7 +108,7 @@ const configuration: webpack.Configuration = {
     ],
   },
   plugins: [
-    new AssetsWebpackPlugin({ filename: 'dist/assets.json' }),
+    new AssetsWebpackPlugin({ filename: 'assets.json' }),
     new CleanWebpackPlugin([ 'static/*.css' ]),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },

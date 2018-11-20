@@ -1,3 +1,4 @@
 # Distrib
-dist
+assets.json
 static/*.css
+static/*.js
