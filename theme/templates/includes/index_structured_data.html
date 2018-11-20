@@ -1,17 +1,41 @@
 {% filter squash %}
   {% if articles_page.number == 1 %}
     <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "author": {
-          "@id": "https://emoji-gen.ninja/#organization"
+      [
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "author": {
+            "@id": "https://emoji-gen.ninja/#organization"
+          },
+          "publisher": {
+            "@id": "https://emoji-gen.ninja/#organization"
+          },
+          "url": "{{ SITEURL }}/"
         },
-        "publisher": {
-          "@id": "https://emoji-gen.ninja/#organization"
-        },
-        "url": "{{ SITEURL }}/"
-      }
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+             "@type": "ListItem",
+             "position": 1,
+             "item": {
+                "@id": "https://emoji-gen.ninja/",
+                "name": "トップページ"
+              }
+            },
+            {
+             "@type": "ListItem",
+             "position": 2,
+             "item": {
+                "@id": "{{ SITEURL }}/",
+                "name": "開発者ブログ"
+              }
+            }
+          }
+        ]
+      ]
     </script>
   {% else %}
     <script type="application/ld+json">
