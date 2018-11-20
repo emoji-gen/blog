@@ -9,6 +9,7 @@ import * as CleanWebpackPlugin from 'clean-webpack-plugin'
 import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 
 // Detect mode
@@ -104,7 +105,8 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   optimization: {
     minimizer: [
-      new OptimizeCSSAssetsPlugin({}),
+      new UglifyJsPlugin(),
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
   plugins: [
