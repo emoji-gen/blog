@@ -2,12 +2,12 @@
 {# <meta property="og:description" content=""> #}
 
 {% if articles_page.number == 1 %}
-  <meta name="twitter:title" content="{{ SITENAME }} - チャット向け絵文字生成サービス">
-  <meta property="og:title" content="{{ SITENAME }} - チャット向け絵文字生成サービス">
+  <meta name="twitter:title" content="{{ SITENAME }} - {{ TOP_SUBTITLE }}">
+  <meta property="og:title" content="{{ SITENAME }} - {{ TOP_SUBTITLE }}">
   <meta property="og:url" content="{{ SITEURL }}/">
 {% else %}
-  <meta name="twitter:title" content="記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }}">
-  <meta property="og:title" content="記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }} ">
+  <meta name="twitter:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }}">
+  <meta property="og:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }} ">
   <meta property="og:url" content="{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html">
 {% endif %}
 

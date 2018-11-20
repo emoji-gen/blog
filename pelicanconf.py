@@ -12,6 +12,8 @@ from unidecode import unidecode
 #
 ENV = os.getenv('PYTHON_ENV', 'development')
 NOINDEX = True # ENV == 'development'
+TOP_SUBTITLE = 'チャット向け絵文字生成サービス'
+INDEX_TITLE = '記事一覧'
 
 
 #

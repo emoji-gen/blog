@@ -3,9 +3,9 @@
 
 {% block title %}
   {% if articles_page.number == 1 %}
-    {{ SITENAME }} - チャット向け絵文字生成サービス
+    {{ SITENAME }} - {{ TOP_SUBTITLE }}
   {% else %}
-    記事一覧 ({{ articles_page.number }}ページ目) - {{ SITENAME }}
+    {{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }}
   {% endif %}
 {% endblock %}
 
