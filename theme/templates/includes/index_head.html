@@ -1,13 +1,16 @@
 <meta property="og:type" content="website">
-{# <meta property="og:description" content=""> #}
 
 {% if articles_page.number == 1 %}
+  <meta name="description" content="{{ INDEX_DESCRIPTION }}">
   <meta name="twitter:title" content="{{ SITENAME }} - {{ SITE_SUBTITLE }}">
   <meta property="og:title" content="{{ SITENAME }} - {{ SITE_SUBTITLE }}">
+  <meta property="og:description" content="{{ INDEX_DESCRIPTION }}">
   <meta property="og:url" content="{{ SITEURL }}/">
 {% else %}
-  <meta name="twitter:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }}">
-  <meta property="og:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }} ">
+  <meta name="description" content="{{ INDEX_DESCRIPTION }} ({{ articles_page.number }}{{ PAGER_SUFFIX }})">
+  <meta name="twitter:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}{{ PAGER_SUFFIX }}) - {{ SITENAME }}">
+  <meta property="og:title" content="{{ INDEX_TITLE }} ({{ articles_page.number }}{{ PAGER_SUFFIX }}) - {{ SITENAME }} ">
+  <meta property="og:description" content="{{ INDEX_DESCRIPTION }} ({{ articles_page.number }}{{ PAGER_SUFFIX }})">
   <meta property="og:url" content="{{ SITEURL }}/{{ page_name }}{{ articles_page.number }}.html">
 {% endif %}
 

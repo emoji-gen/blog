@@ -14,6 +14,8 @@ ENV = os.getenv('PYTHON_ENV', 'development')
 NOINDEX = True # ENV == 'development'
 SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
 INDEX_TITLE = '記事一覧'
+INDEX_DESCRIPTION = 'TODO'
+PAGER_SUFFIX = 'ページ目'
 
 
 #

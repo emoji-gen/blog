@@ -5,7 +5,7 @@
   {% if articles_page.number == 1 %}
     {{ SITENAME }} - {{ SITE_SUBTITLE }}
   {% else %}
-    {{ INDEX_TITLE }} ({{ articles_page.number }}ページ目) - {{ SITENAME }}
+    {{ INDEX_TITLE }} ({{ articles_page.number }}{{ PAGER_SUFFIX }}) - {{ SITENAME }}
   {% endif %}
 {% endblock %}
 
