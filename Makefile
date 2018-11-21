@@ -46,6 +46,7 @@ content-prod:
 
 .PHONY: serve
 serve:
+	mkdir -p $(PUBLICDIR)
 ifdef PORT
 	@echo Serving on http://0.0.0.0:$(PORT)/blog/ ...
 	cd $(PUBLICDIR) && $(PELICAN) --listen --settings $(CONFFILE) --port $(PORT)
