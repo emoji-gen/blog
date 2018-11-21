@@ -44,7 +44,7 @@ JINJA_FILTERS = {
 }
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap', 'summary']
-PLUGIN_PATHS = ['vendor/plugins']
+PLUGIN_PATHS = ['externals/plugins']
 SITENAME = '絵文字ジェネレーター 開発者ブログ'
 
 if ENV == 'production':
