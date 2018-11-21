@@ -1,4 +1,4 @@
-PY?=python
+PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -49,9 +49,9 @@ serve:
 	mkdir -p $(PUBLICDIR)
 ifdef PORT
 	@echo Serving on http://0.0.0.0:$(PORT)/blog/ ...
-	cd $(PUBLICDIR) && $(PELICAN) --listen --settings $(CONFFILE) --port $(PORT)
+	cd $(PUBLICDIR) && $(PY) -m http.server $(PORT)
 else
 	@echo Serving on http://0.0.0.0:8000/blog/ ...
-	cd $(PUBLICDIR) && $(PELICAN) --listen --settings $(CONFFILE)
+	cd $(PUBLICDIR) && $(PY) -m http.server 8000
 endif
 
