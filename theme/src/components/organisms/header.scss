@@ -23,7 +23,9 @@ $_color_text_primary: rgb(80, 80, 80);
       line-height: 1.8;
       letter-spacing: 6px;
       text-align: right;
-      background: url($theme-url + '/images/gears.png') right center / 60px auto no-repeat;
+      background: url($theme-url + '/images/gears.png') right center / 60px 60px no-repeat;
+      background-image: image-set(
+        url($theme-url + '/images/gears.png') 1x, url($theme-url + '/images/gears@2x.png') 2x);
       font-size: $font-xlarge;
       font-weight: bold;
     }
