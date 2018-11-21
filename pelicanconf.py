@@ -12,10 +12,12 @@ from unidecode import unidecode
 #
 ENV = os.getenv('PYTHON_ENV', 'development')
 NOINDEX = True # ENV == 'development'
-SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
+
+DESCRIPTION_MAX_LENGTH = 300
 INDEX_TITLE = '記事一覧'
 INDEX_DESCRIPTION = 'TODO'
 PAGER_SUFFIX = 'ページ目'
+SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
 
 
 #
@@ -41,7 +43,7 @@ JINJA_FILTERS = {
     'squash': do_squash,
 }
 PATH = 'content'
-PLUGINS = ['minify', 'sitemap']
+PLUGINS = ['minify', 'sitemap', 'summary']
 PLUGIN_PATHS = ['vendor/plugins']
 SITENAME = '絵文字ジェネレーター 開発者ブログ'
 

@@ -11,7 +11,7 @@
   }
 
   &__title {
-    margin: 5px 0 0;
+    margin: 0;
     line-height: 1.2;
     a {
       color: $color-green-dark;
@@ -24,5 +24,15 @@
   &__date {
     font-size: $font-xsmall;
     color: $color-gray;
+  }
+
+  &__body {
+    margin: 24px 0 0;
+    font-size: $font-medium;
+
+    p {
+      line-height: 1.6;
+      margin: 14px 0;
+    }
   }
 }
