@@ -27,17 +27,39 @@
   }
 
   &__body {
-    margin: 24px 0 0;
+    margin: 25px 0;
     font-size: $font-medium;
-
     p {
       line-height: 1.6;
       margin: 18px 0;
     }
-
     .thumbnail {
       display: block;
-      margin: 40px auto 40px;
+      margin: 40px auto;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    &__button {
+      padding: 5px 40px;
+      color: $color-gray;
+      font-size: $font-small;
+      text-decoration: none;
+      &:hover {
+        .summary__more__button__arrow {
+          opacity: 1;
+        }
+      }
+      &__description {
+        display: block;
+        margin: 0 0 10px;
+      }
+      &__arrow {
+        opacity: .5;
+      }
     }
   }
 }

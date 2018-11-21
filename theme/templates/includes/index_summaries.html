@@ -7,5 +7,13 @@
     </h2>
 
     <div class="summary__body">{{ article.summary }}</div>
+
+    <div class="summary__more">
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" class="summary__more__button">
+        <span class="summary__more__button__description">続きを読む</span>
+        <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/arrow-down.png" width="20"
+          class="summary__more__button__arrow">
+      </a>
+    </div>
   </div>
 {% endfor %}
