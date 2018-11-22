@@ -21,7 +21,7 @@
         {% endif %}
         "datePublished": "{{ article.date.isoformat() }}",
         "headline": "{{ article.title }} - {{ SITENAME }}",
-        "description": "{{ article.summary|striptags }}",
+        "description": "{{ article.content|striptags|truncate(DESCRIPTION_MAX_LENGTH) }}",
         "url": "{{ SITEURL }}/{{ article.url }}"
       },
       {
