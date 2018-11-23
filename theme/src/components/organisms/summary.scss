@@ -11,33 +11,13 @@
   }
 
   &__title {
-    margin: 0;
-    line-height: 1.2;
-    a {
-      color: $color-green-dark;
-      font-size: $font-large;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    @include article-title;
   }
-
   &__date {
-    font-size: $font-xsmall;
-    color: $color-gray;
+    @include article-date;
   }
-
   &__body {
-    margin: 25px 0;
-    font-size: $font-medium;
-    color: rgba(0, 0, 0, .85);
-    p {
-      line-height: 1.6;
-      margin: 18px 0;
-    }
-    .thumbnail {
-      display: block;
-      margin: 40px auto;
-    }
+    @include article-body;
   }
 
   &__more {

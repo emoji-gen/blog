@@ -1,4 +1,18 @@
 @import 'includes/variables';
+@import 'includes/mixins';
 
 .article {
+  @include box;
+  padding: 20px 25px;
+
+  &__title {
+    @include article-title;
+  }
+  &__date {
+    @include article-date;
+  }
+  &__body {
+    @include article-body;
+  }
+
 }

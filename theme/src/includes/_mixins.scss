@@ -1,7 +1,49 @@
 @import 'includes/variables';
 
+/**
+ * 透過影ありボックス
+ */
 @mixin box {
   margin: 0 auto;
   background-color: $color_background-white;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * 記事 タイトル
+ */
+@mixin article-title {
+  margin: 8px 0;
+  line-height: 1.2;
+  font-size: $font-large;
+  a {
+    color: $color-green-dark;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+/**
+ * 記事 投稿日時
+ */
+@mixin article-date {
+  font-size: $font-xsmall;
+  color: $color-gray;
+}
+
+/**
+ * 記事 本文
+ */
+@mixin article-body {
+  margin: 25px 0;
+  font-size: $font-medium;
+  color: rgba(0, 0, 0, .85);
+  p {
+    line-height: 1.6;
+    margin: 18px 0;
+  }
+  .thumbnail {
+    display: block;
+    margin: 40px auto;
+  }
 }
