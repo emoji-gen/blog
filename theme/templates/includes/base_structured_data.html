@@ -10,7 +10,11 @@
         "https://github.com/emoji-gen"
       ],
       "url": "https://emoji-gen.ninja/",
-      "logo": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.png"
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.png",
+        "url": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.png"
+      }
     }
   </script>
 {% endfilter %}
