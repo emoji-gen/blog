@@ -5,17 +5,36 @@ $_color_text_primary: rgb(80, 80, 80);
 
 .footer {
   @include box;
-  padding: 25px 50px;
-  width: $dimen-content-width;
   box-sizing: border-box;
 
   &__copyright {
     letter-spacing: 1px;
     color: $color-gray;
-    font-size: $font-small;
     a {
       color: $color-gray;
       text-decoration: none;
+    }
+  }
+}
+
+
+@include pc {
+  .footer {
+    padding: 25px 50px;
+    width: $dimen-content-width;
+    &__copyright {
+      font-size: $font-small;
+    }
+  }
+}
+
+
+@include sp {
+  .footer {
+    padding: 12px 0;
+    text-align: center;
+    &__copyright {
+      font-size: $font-xsmall;
     }
   }
 }

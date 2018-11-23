@@ -1,5 +1,24 @@
 @import 'includes/variables';
 
+
+/**
+ * PC 向けスタイル
+ */
+@mixin pc {
+  @media (min-width: $dimen-content-width) {
+    @content;
+  }
+}
+
+/**
+ * スマートフォン向け
+ */
+@mixin sp {
+  @media (max-width: $dimen-content-width - 1) {
+    @content;
+  }
+}
+
 /**
  * 透過影ありボックス
  */

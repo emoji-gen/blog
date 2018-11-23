@@ -7,9 +7,6 @@ $_color_text_primary: rgb(80, 80, 80);
   @include box;
   position: relative;
   display: flex;
-  justify-content: center;
-  padding: 35px 50px;
-  width: $dimen-content-width;
   box-sizing: border-box;
 
   &__title {
@@ -20,14 +17,51 @@ $_color_text_primary: rgb(80, 80, 80);
     &__text {
       margin: 0;
       padding: 0 90px 0 0;
-      line-height: 1.8;
       letter-spacing: 6px;
-      text-align: right;
       background: url($theme-url + '/images/gears.png') right center / 60px 60px no-repeat;
       background-image: image-set(
-        url($theme-url + '/images/gears.png') 1x, url($theme-url + '/images/gears@2x.png') 2x);
-      font-size: $font-xlarge;
+        url($theme-url + '/images/gears.png') 1x,
+        url($theme-url + '/images/gears@2x.png') 2x);
       font-weight: bold;
+    }
+  }
+}
+
+
+@include pc {
+  .header {
+    padding: 35px 0;
+    width: $dimen-content-width;
+    justify-content: center;
+
+    &__title {
+      &__text {
+        line-height: 1.8;
+        font-size: $font-xlarge;
+        text-align: right;
+        &__word {
+          &--3 {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include sp {
+  .header {
+    padding: 12px 0 12px 30px;
+
+    &__title {
+      &__text {
+        line-height: 1.4;
+        font-size: $font-large;
+        &__word {
+          display: block;
+        }
+      }
     }
   }
 }

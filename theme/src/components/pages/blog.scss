@@ -1,27 +1,43 @@
 @import 'includes/variables';
 @import 'includes/mixins';
 
-.blog {
-  &__header {
-    margin: 40px 0 0;
-  }
 
-  &__body {
-    display: flex;
-    margin: 30px auto 0;
-    width: $dimen-content-width;
-    min-height: 800px;
-    &__content {
-      flex: 1 1 auto;
+@include pc {
+  .blog {
+    &__header {
+      margin: 40px 0 0;
     }
-    &__sidebar {
-      flex: 0 0 auto;
-      width: 290px;
+    &__body {
+      display: flex;
+      margin: 30px auto 0;
+      width: $dimen-content-width;
+      min-height: 800px;
+      &__content {
+        flex: 1 1 auto;
+      }
+      &__sidebar {
+        flex: 0 0 auto;
+        margin: 0 0 0 30px;
+        width: 290px;
+      }
     }
-  }
-
-  &__footer {
-    margin: 30px 0 40px;
+    &__footer {
+      margin: 30px 0 40px;
+    }
   }
 }
 
+
+@include sp {
+  .blog {
+    &__body {
+      margin: 20px 0 0;
+      &__sidebar {
+        margin: 20px 0 0;
+      }
+    }
+    &__footer {
+      margin: 20px 0 0;
+    }
+  }
+}
