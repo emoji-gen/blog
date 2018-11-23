@@ -2,10 +2,24 @@
 @import 'includes/mixins';
 
 .sidebar {
-  @include box;
-  margin: 0 0 0 30px;
-  padding: 20px 25px;
+  &__about {
+    @include box;
+    margin: 0 0 0 30px;
+    padding: 20px 25px;
 
-  height: 400px; // TODO
+    &__heading {
+      margin: 0 0 25px;
+      color: $color-blue-dark;
+      font-size: $font-medium;
+    }
+    &__description {
+      line-height: 1.7;
+      font-size: $font-small;
+      color: $color-gray;
+      a {
+        color: $color-gray;
+      }
+    }
+  }
 }
 
