@@ -1,0 +1,21 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+$_width: 86px;
+$_height: 20px;
+$_background-color: #00a4de;
+
+.hatena-bookmark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  border-radius: 3px;
+  width: $_width;
+  height: $_height;
+  color: #fff;
+  background: $_background-color;
+}
+

@@ -1,6 +1,7 @@
 'use strict'
 
 import './atoms/facebook.scss'
+import './atoms/hatena-bookmark.scss'
 import './atoms/twitter.scss'
 import './organisms/background.scss'
 import './organisms/footer.scss'
