@@ -17,7 +17,9 @@ $_height: 20px;
   color: #fff;
   background: #4267b2;
   font-size: 11px;
-  font-family: Helvetica, Arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+  font-family: Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
   text-decoration: none;
 
   &__logo {
