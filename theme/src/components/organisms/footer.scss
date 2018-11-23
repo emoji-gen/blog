@@ -5,7 +5,6 @@ $_color_text_primary: rgb(80, 80, 80);
 
 .footer {
   @include box;
-  position: relative;
   padding: 25px 50px;
   width: $dimen-content-width;
   box-sizing: border-box;
@@ -13,5 +12,9 @@ $_color_text_primary: rgb(80, 80, 80);
   &__copyright {
     color: $color-gray;
     font-size: $font-small;
+    a {
+      color: $color-gray;
+      text-decoration: none;
+    }
   }
 }
