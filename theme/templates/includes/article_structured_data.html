@@ -44,6 +44,9 @@
         "datePublished": "{{ article.date.isoformat() }}",
         "headline": "{{ article.title }} - {{ SITENAME }}",
         "description": "{{ article.content|striptags|truncate(DESCRIPTION_MAX_LENGTH) }}",
+        "image": [
+          "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/ogp.png"
+        ],
         "url": "{{ SITEURL }}/{{ article.url }}"
       },
       {
