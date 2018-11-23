@@ -49,10 +49,16 @@
           {% include 'includes/base_sidebar.html' %}
         </div>
       </div>
+
+      <div class="blog__footer">
+        {% include 'includes/base_footer.html' %}
+      </div>
     </div>
 
     {# Assets #}
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ 'js'|hashed_assets }}"></script>
+
+    {# JSON-LD #}
     {% include 'includes/base_structured_data.html' %}
   </body>
 </html>

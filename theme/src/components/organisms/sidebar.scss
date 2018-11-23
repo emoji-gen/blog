@@ -2,4 +2,10 @@
 @import 'includes/mixins';
 
 .sidebar {
+  @include box;
+  margin: 0 0 0 30px;
+  padding: 20px 25px;
+
+  height: 400px;
 }
+

@@ -1,0 +1,17 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+$_color_text_primary: rgb(80, 80, 80);
+
+.footer {
+  @include box;
+  position: relative;
+  padding: 25px 50px;
+  width: $dimen-content-width;
+  box-sizing: border-box;
+
+  &__copyright {
+    color: $color-gray;
+    font-size: $font-small;
+  }
+}
