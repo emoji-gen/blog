@@ -1,5 +1,6 @@
 'use strict'
 
+import './atoms/facebook.scss'
 import './organisms/background.scss'
 import './organisms/footer.scss'
 import './organisms/header.scss'
