@@ -1,8 +1,29 @@
 @import 'includes/variables';
 @import 'includes/mixins';
 
-$_width: 61px;
+$_width: 75px;
 $_height: 20px;
 
 .twitter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 0 8px 0 0;
+  border-radius: 3px;
+  width: $_width;
+  height: $_height;
+  color: #fff;
+  background: #1b95e0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+
+  svg {
+    position: absolute;
+    left: 6px;
+    top: 3px;
+  }
 }
