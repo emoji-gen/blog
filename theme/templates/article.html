@@ -11,18 +11,21 @@
 
 {% block content %}
   <div class="article">
-
+    {# タイトル #}
     <time datetime="{{ article.date.isoformat() }}" class="article__date">{{ article.locale_date }}</time>
-
     <h1 class="article__title">
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
     </h1>
 
+    {# 本文 #}
     <div class="article__body">
       {{ article.content }}
     </div>
+
+    {# シェア #}
+    {% include 'includes/article_share.html' %}
   </div>
 
-  {# JSON-LD #}
+  {# 構造化データ #}
   {% include 'includes/article_structured_data.html' %}
 {% endblock %}

@@ -15,4 +15,13 @@
     @include article-body;
   }
 
+  &__share {
+    display: flex;
+    .fb_iframe_widget > span {
+      vertical-align: baseline !important;
+    }
+    &__item {
+      margin: 0 5px 0 0;
+    }
+  }
 }
