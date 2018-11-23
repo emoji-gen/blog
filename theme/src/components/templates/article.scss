@@ -17,6 +17,8 @@
 
   &__share {
     display: flex;
+    justify-content: flex-end;
+    margin: 40px 0 0;
     .fb_iframe_widget > span {
       vertical-align: baseline !important;
     }
