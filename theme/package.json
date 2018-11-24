@@ -8,14 +8,12 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@types/assets-webpack-plugin": "^3.5.1",
     "@types/clean-webpack-plugin": "^0.1.2",
     "@types/event-hooks-webpack-plugin": "^2.0.0",
     "@types/mini-css-extract-plugin": "^0.2.0",
     "@types/optimize-css-assets-webpack-plugin": "^1.3.3",
     "@types/uglifyjs-webpack-plugin": "^1.1.0",
     "@types/webpack": "^4.4.19",
-    "assets-webpack-plugin": "^3.9.7",
     "autoprefixer": "^9.3.1",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",

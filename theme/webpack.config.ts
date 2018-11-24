@@ -4,7 +4,6 @@ import * as fs from 'fs'
 import { join } from 'path'
 
 import * as webpack from 'webpack'
-import * as AssetsWebpackPlugin from 'assets-webpack-plugin'
 import * as CleanWebpackPlugin from 'clean-webpack-plugin'
 import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -45,7 +44,7 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~
   output: {
     path: __dirname,
-    filename: 'static/script-[contenthash].js',
+    filename: 'dist/script.js',
   },
 
   // Module
@@ -107,14 +106,13 @@ const configuration: webpack.Configuration = {
     ],
   },
   plugins: [
-    new AssetsWebpackPlugin({ filename: 'assets.json' }),
     new CleanWebpackPlugin([ 'static/*.css' ]),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
     }),
     new MiniCssExtractPlugin({
-      filename: 'static/style-[contenthash].css',
+      filename: 'dist/style.css',
     }),
   ],
 

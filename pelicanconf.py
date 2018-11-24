@@ -23,13 +23,10 @@ SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
 #
 # Basic settings
 #
-def do_hashed_assets(name):
-    json_path = 'theme/assets.json'
-    with open(json_path, 'r') as fp:
-        assets = json.load(fp)
-        asset_path = assets['main'].get(name)
-        if asset_path:
-            return asset_path.replace('static/', '')
+def do_style(value):
+    css_path = 'theme/dist/style.css'
+    with open(css_path, 'r', encoding = 'utf-8') as fp:
+        return fp.read()
 
 def do_squash(value):
     return re.sub(r'\s+', ' ', value)
@@ -39,8 +36,8 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
 JINJA_FILTERS = {
-    'hashed_assets': do_hashed_assets,
     'squash': do_squash,
+    'style': do_style,
 }
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap', 'summary']

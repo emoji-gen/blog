@@ -4,10 +4,7 @@
     {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {# Assets #}
     <link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.ico">
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ 'css'|hashed_assets }}">
 
     {# Google Analytics #}
     {% include 'includes/base_gtag.html' %}
@@ -26,6 +23,7 @@
     <meta property="og:site_name" content="{{ SITENAME }} - {{ SITE_SUBTITLE }}" />
     <meta property="og:locale" content="ja_JP">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <style>{% filter style %}{% endfilter %}</style>
     {% endblock %}
   </head>
 
