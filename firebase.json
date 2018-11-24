@@ -21,37 +21,37 @@
       },
       {
         "source": "/blog/",
-        "headers" : [
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=10, stale-while-revalidate=60"
+            "key": "Cache-Control",
+            "value": "public, max-age=10, stale-while-revalidate=60"
           }
         ]
       },
       {
         "source": "/blog/**/*.html",
-        "headers" : [
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=10, stale-while-revalidate=60"
+            "key": "Cache-Control",
+            "value": "public, max-age=10, stale-while-revalidate=60"
           }
         ]
       },
       {
         "source": "/blog/**/*.@(png|jpg)",
-        "headers" : [
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=180, stale-while-revalidate=600"
+            "key": "Cache-Control",
+            "value": "public, max-age=180, stale-while-revalidate=600"
           }
         ]
       },
       {
         "source": "/blog/**/*.xml",
-        "headers" : [
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=3600, stale-if-error=3600"
+            "key": "Cache-Control",
+            "value": "public, max-age=3600, stale-if-error=3600"
           }
         ]
       }
