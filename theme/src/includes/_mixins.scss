@@ -60,8 +60,10 @@
   a {
     color: inherit;
   }
-  p {
+  p, ul, ol {
     line-height: 1.6;
+  }
+  p {
     margin: 18px 0;
   }
   h2 {
