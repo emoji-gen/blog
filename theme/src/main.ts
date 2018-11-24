@@ -1,6 +1,6 @@
 'use strict'
 
-import 'purecss'
+import 'normalize.css'
 
 import './style.scss'
 import './components'

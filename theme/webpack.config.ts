@@ -96,9 +96,6 @@ const configuration: webpack.Configuration = {
   //~~~~~~~~~~~
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    alias: {
-      'purecss': 'purecss/build/pure-min.css',
-    },
   },
 
   // Optimization and Plugins
