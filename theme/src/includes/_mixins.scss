@@ -14,7 +14,7 @@
  * スマートフォン向け
  */
 @mixin sp {
-  @media (max-width: $dimen-content-width - 1) {
+  @media not all and (min-width: $dimen-content-width) {
     @content;
   }
 }
