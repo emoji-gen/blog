@@ -12,7 +12,8 @@ jobs:
       - run:
           name: Checkout submodules
           command: |
-            git submodule update --init --recursive --jobs=6
+            JOBS=$(($(nproc) * 3))
+            git submodule update --init --recursive --jobs=$JOBS
       - run:
           name: System information
           command: |
