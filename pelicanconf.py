@@ -11,7 +11,7 @@ from unidecode import unidecode
 # Custom settings
 #
 ENV = os.getenv('PYTHON_ENV', 'development')
-NOINDEX = True # ENV == 'development'
+NOINDEX = ENV == 'development'
 
 DESCRIPTION_MAX_LENGTH = 300
 INDEX_TITLE = '記事一覧'
