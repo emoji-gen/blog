@@ -106,7 +106,7 @@ const configuration: webpack.Configuration = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin([ 'static/*.css' ]),
+    new CleanWebpackPlugin([ 'dist/*.css', 'dist/*.js' ], { verbose: false }),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
