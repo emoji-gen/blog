@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="{{ SITENAME }} - {{ SITE_SUBTITLE }}" />
     <meta property="og:locale" content="ja_JP">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
-    <style>{% filter style %}{% endfilter %}</style>
+    <style>{% filter inject_style %}{% endfilter %}</style>
     {% endblock %}
   </head>
 

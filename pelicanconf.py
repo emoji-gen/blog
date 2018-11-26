@@ -23,7 +23,7 @@ SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
 #
 # Basic settings
 #
-def do_style(value):
+def do_inject_style(value):
     css_path = 'theme/dist/style.css'
     with open(css_path, 'r', encoding = 'utf-8') as fp:
         return fp.read()
@@ -36,8 +36,8 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DELETE_OUTPUT_DIRECTORY = True
 JINJA_FILTERS = {
+    'inject_style': do_inject_style,
     'squash': do_squash,
-    'style': do_style,
 }
 PATH = 'content'
 PLUGINS = ['minify', 'sitemap', 'summary']
