@@ -15,7 +15,7 @@ NOINDEX = True # ENV == 'development'
 
 DESCRIPTION_MAX_LENGTH = 300
 INDEX_TITLE = '記事一覧'
-INDEX_DESCRIPTION = 'チャットツール向け絵文字の無料生成サービス『絵文字ジェネレーター』の開発者ブログです。サービスのアップデート情報の告知や、技術情報の発信を行っています。'
+INDEX_DESCRIPTION = 'チャットツール向け絵文字の無料生成サービス『絵文字ジェネレーター』の開発者ブログです。サービスのアップデート情報の告知や、技術情報の発信を行っています。絵文字の生成アルゴリズムや、利用技術 (Python, aiohttp, JavaScript, TypeScript, Vue, C++, Skia, etc...) に興味がある方は、ぜひご覧ください。'
 PAGER_SUFFIX = 'ページ目'
 SITE_SUBTITLE = 'チャット向け絵文字生成サービス'
 
