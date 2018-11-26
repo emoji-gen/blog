@@ -9,7 +9,7 @@
 ## Libraries
 
 - [Pelican](https://github.com/getpelican/pelican)
-- [Pure](https://purecss.io/)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
 
 ## Getting started
 
