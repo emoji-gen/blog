@@ -27,6 +27,13 @@ $ cd theme && yarn
 $ make dev
 ```
 
+## Development
+### Pygments
+
+```bash
+$ pygmentize -S trac -f html -a .highlight > theme/src/generated/pygments.css
+```
+
 ## Deployment
 
 ```bash
@@ -34,12 +41,6 @@ $ yarn global add firebase-tools
 
 $ make            # Build for production
 $ firebase deploy # Deployment
-```
-
-### Pygments
-
-```bash
-$ pygmentize -S trac -f html -a .highlight > theme/src/generated/pygments.css
 ```
 
 ## License
