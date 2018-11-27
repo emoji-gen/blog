@@ -84,16 +84,15 @@
   img {
     display: block;
     margin: 40px auto;
-
-    @include pc {
-      &.sp-only {
-        display: none;
-      }
+  }
+  @include pc {
+    .sp-only {
+      display: none;
     }
-    @include sp {
-      &.pc-only {
-        display: none;
-      }
+  }
+  @include sp {
+    .pc-only {
+      display: none;
     }
   }
 }
