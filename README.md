@@ -1,4 +1,5 @@
-## blog
+## Blog
+[![CircleCI](https://circleci.com/gh/emoji-gen/blog/tree/master.svg?style=shield)](https://circleci.com/gh/emoji-gen/blog/tree/master)
 
 ## Requirements
 
