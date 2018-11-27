@@ -44,8 +44,8 @@ jobs:
       - save_cache:
           key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
           paths:
-            - $CIRCLE_WORKING_DIRECTORY/node_modules
-            - $CIRCLE_WORKING_DIRECTORY/theme/node_modules
+            - ~/workspace/node_modules
+            - ~/workspace/theme/node_modules
             - ~/.cache/yarn/
             - ~/.cache/pip/
       - run:
