@@ -1,4 +1,4 @@
-Title: Web Extensions とブラウザ拡張機能、Slack への直接絵文字登録の仕組み
+Title: WebExtensions とブラウザ拡張機能、Slack への直接絵文字登録の仕組み
 Date: 2018-12-23 00:00
 Modified: 2018-12-23 00:00
 Slug: web-extensions
@@ -13,9 +13,9 @@ Slug: web-extensions
 
 絵文字ジェネレーターでは、Google Chrome や Firefox 向けにブラウザ拡張機能を提供しています。ブラウザ拡張機能を使うと、絵文字をダウンロードするだけではなく、所属する Slack チームのカスタム絵文字として直接登録することができます。
 
-この記事では、ブラウザ拡張機能を作るのに使われている Web Extensions という仕様についてまず解説します。Web Extensions は特定のブラウザに縛られない仕様で、Google Chrome や Firefox、Microsoft Edge でサポートされています。
+この記事では、ブラウザ拡張機能を作るのに使われている WebExtensions API についてまず解説します。WebExtensions API は特定のブラウザに縛られない API で、Google Chrome や Firefox、Microsoft Edge でサポートされています。
 
-次に、ブラウザ拡張機能の中で、具体的にどのような API も用いて Slack へ直接絵文字を登録しているのかを解説します。絵文字ジェネレーターのブラウザ拡張機能は TypeScript で記述されています。記事中では、具体的なコードを絡めて説明していけたらと思います。
+次に、ブラウザ拡張機能の中で、具体的にどのような API も用いて Slack へ直接絵文字を登録しているのかを解説します。絵文字ジェネレーターのブラウザ拡張機能は TypeScript で記述されており、記事中では具体的なコードを絡めて説明していけたらと思います。
 
 <!-- PELICAN_END_SUMMARY -->
 
