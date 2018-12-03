@@ -19,7 +19,17 @@ Slug: web-extensions
 
 <!-- PELICAN_END_SUMMARY -->
 
-## 絵文字ジェネレーターのブラウザ拡張機能の紹介
+## 絵文字ジェネレーターのブラウザ拡張機能とは?
+### 機能紹介
+### 今すぐダウンロード!
 
+## WebExtensions API とは?
+### 成り立ちと概要
+### ブラウザの対応状況
 
-##
+## TypeScript による拡張機能開発
+
+## 絵文字の Slack 直接登録機能の実装
+### cheerio によるスクレイピング
+### Contents scripts とウェブページ間の通信
+### Background scripts と Contents scripts 間の通信
