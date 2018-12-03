@@ -25,4 +25,13 @@
     </a>
   </div>
 
+  {# LINE #}
+  <div class="article__share__item">
+    <a href="https://social-plugins.line.me/lineit/share?url={{ (SITEURL + '/' + article.url)|urlencode }}"
+       target="_blank" rel="nofollow noopener">
+      <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/line.png"
+        srcset="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/line.png 1x, {{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/line.png 2x"
+        alt="LINEで送る" width="80" height="20">
+    </a>
+  </div>
 </div>
