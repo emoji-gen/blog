@@ -11,7 +11,9 @@ Slug: web-extensions
 
 <a href="https://emoji-gen.ninja/" target="_blank" rel="bookmark">絵文字ジェネレーター</a> では、<a href="https://www.google.co.jp/chrome/" target="_blank" rel="noopener">Google Chrome</a> や Firefox 向けにブラウザ拡張機能を提供しています。ブラウザ拡張機能を使うと、絵文字をダウンロードするだけではなく、所属する Slack チームのカスタム絵文字としてブラウザから直接登録することができます。
 
-この記事では、ブラウザ拡張機能を作るのに使われている WebExtensions API についてまず解説します。WebExtensions API は特定のブラウザに縛られない拡張機能開発のための API で、Google Chrome や Firefox、Microsoft Edge でサポートされています。
+この記事では、絵文字ジェネレーターのブラウザ拡張機能を紹介した後、そのブラウザ拡張機能を作るのに使われている WebExtensions API について解説します。
+
+WebExtensions API は特定のブラウザに縛られない拡張機能開発のための API で、Google Chrome や Firefox、Microsoft Edge でサポートされています。
 
 次に、実際のブラウザ拡張機能の中で、どのようにして Slack へ直接絵文字を登録しているのかを解説します。絵文字ジェネレーターのブラウザ拡張機能は TypeScript で記述されています。記事中では具体的なコードを絡めて説明していこうと思います。
 
@@ -21,15 +23,15 @@ Slug: web-extensions
 まずはじめに、絵文字ジェネレーターのブラウザ拡張機能について紹介します。
 
 ### 絵文字ジェネレーターと Slack
-<a href="https://emoji-gen.ninja/" target="_blank" rel="bookmark">絵文字ジェネレーター</a> では、より便利にサービスを使ってもらうため、ブラウザ拡張機能を提供しています。絵文字ジェネレーターでは、チャットなどのリアクションに使う画像の生成を想定して開発しています。チャットツールは複数ありますが、その中でも <a href="https://slack.com/" target="_blank" rel="noopener">Slack</a> がメインターゲットです。
+<a href="https://emoji-gen.ninja/" target="_blank" rel="bookmark">絵文字ジェネレーター</a> では、より便利にサービスを使ってもらうため、ブラウザ拡張機能を提供しています。絵文字ジェネレーターは、チャットなどのリアクションに使う画像の生成を想定して開発しています。チャットツールは複数ありますが、その中でも <a href="https://slack.com/" target="_blank" rel="noopener">Slack</a> がメインターゲットです。
 
 Slack は IT 系の会社を中心に、幅広く使われているチャットサービスです。Slack は、チーム (組織) ごとにユーザーアカウントが独立しており、個人間よりも会社などの組織内で使われることを前提としています。
 
 Slack のチャットツールとしての特徴は、発言に対するリアクションです。SNS の『 いいね 』のような気軽さで、よりレパートリーに富んだ感情を表すことができます。
 
-標準では、&#x1F44D; や &#x1F607; などの <a href="https://unicode.org/emoji/charts/full-emoji-list.html" target="_blank" rel="noopener">Unicode Emoji</a> が利用できます。さらに、任意の画像をカスタム絵文字として登録することもできます。
+標準では &#x1F44D; や &#x1F607; などの <a href="https://unicode.org/emoji/charts/full-emoji-list.html" target="_blank" rel="noopener">Unicode Emoji</a> をリアクションとして利用できます。さらに、任意の画像をカスタム絵文字として登録し、リアクションとして用いることもできます。
 
-ここで登録する画像の生成を目的としたのが絵文字ジェネレーターであり、その登録作業を効率化するためにブラウザ拡張機能を開発しました。
+そのカスタム絵文字の画像生成を目的としたサービスが絵文字ジェネレーターであり、その登録作業を効率化するために開発したのが絵文字ジェネレーターのブラウザ拡張機能です。これよってカスタム絵文字がより気軽に作れるようになることにより、チャット上のコミュニケーションが活発になることを目指しています。
 
 ### ブラウザ拡張機能の機能
 ブラウザ拡張機能を使うと、絵文字ジェネレーターで絵文字を生成した後、ブラウザから直接所属する Slack チームへ絵文字を登録することができます。今まで行っていた『 生成した PNG 画像をダウンロードしてから、Slack の絵文字登録画面を開き、登録する 』といった手順が不要となります。
@@ -46,14 +48,14 @@ Slack のチャットツールとしての特徴は、発言に対するリア�
 絵文字ジェネレーターのブラウザ拡張機能は、GitHub 上でオープンソースで開発されています。ご興味のある方は <a href="https://github.com/emoji-gen/browser-extension" target="_blank" rel="noopener">emoji-gen/browser-extension</a> からご覧ください。
 
 ## WebExtensions API について
-次に、絵文字ジェネレーターのブラウザ拡張機能で使われている WebExtensions API について説明します。
+次に、<a href="https://emoji-gen.ninja/" rel="bookmark">絵文字ジェネレーター</a> のブラウザ拡張機能で使われている WebExtensions API について説明します。
 
 ### WebExtensions API の成り立ちと概要
 元々、ブラウザ拡張機能というのはブラウザごと別々の仕様に沿って作る必要がありました。
 
-Firefox には遥か昔から拡張機能というものが存在し、XUL/XPCOM や Add-on SDK などを使って JavaScript や C++ で UI を拡張したり、コンテンツへ変更したりすることができました。これらの技術で作られた拡張機能は、他のブラウザでは動作しませんでした。
+Firefox には遥か昔から拡張機能というものが存在し、XUL/XPCOM や Add-on SDK などの仕様に沿って JavaScript や C++ で開発してきました。これらの技術で作られた拡張機能は、他のブラウザでは動作しませんでした。
 
-Google Chrome にも JavaScript でブラウザ拡張機能を作る API が存在していました。これらの API は Firefox の拡張機能 API との一歳の互換性がありませんでした。
+Google Chrome にも JavaScript でブラウザ拡張機能を作る API が存在していました。これらの API は Firefox の拡張機能 API との互換性は全くありませんでした。
 
 そこで登場したのが WebExtensions API です。WebExtensions API は、ブラウザごとにバラバラだった API を統一し、一つの拡張機能で複数のブラウザに対応可能にしました。開発者にとってはありがたい限りです。
 
@@ -64,21 +66,23 @@ WebExtensions API は主要ブラウザでは Google Chrome、Firefox、Microsof
 
 現在、絵文字ジェネレーターの拡張機能は Microsoft Edge に対応していません。これは、対応を検討した時期の Microsoft Edge の WebExtensions API の対応が不十分であったためです。現在は改善しているかもしれません。
 
+もしくは、<a href="https://www.windowscentral.com/microsoft-building-chromium-powered-web-browser-windows-10" target="_blank" rel="noopener">Microsoft Edge が Chromium ベースになる</a> などの事が本当に起きた場合、実装差異は気にしなくて良くなるかもしれません。
+
 ## TypeScript による拡張機能開発
 絵文字ジェネレーターのブラウザ拡張機能は TypeScript を使って開発されています。
 
-TypeScript を使って開発する際に気になるのが型定義ファイルです。Google Chrome の拡張機能向けの型定義ファイルはコミュニティ <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">DefinitelyTyped</a> で開発され NPM 上に <a href="https://www.npmjs.com/package/@types/chrome" target="_blank" rel="noopener">@types/chrome</a> として公開されています。利用する際は `npm` または `yarn` コマンドを用い、プロジェクトの依存に加えます。
+TypeScript を使って開発する際に気になるのが型定義ファイルです。Google Chrome の拡張機能向けの型定義ファイルはコミュニティ <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank" rel="noopener">DefinitelyTyped</a> で開発され npm 上に <a href="https://www.npmjs.com/package/@types/chrome" target="_blank" rel="noopener">@types/chrome</a> として公開されています。利用する際は `npm` または `yarn` コマンドを用い、プロジェクトの依存に加えます。
 
 ```
 $ npm install --save-dev @types/chrome # for NPM users
 $ yarn add --dev @types/chrome         # for Yarn users
 ```
 
-そして、TypeScript で書かれたソースコードは、最終的に Webpack と gulp を用いて JavaScript にビルドされます。もし Webpack などのモジュールバンドラを使って Firefox の拡張機能を作る場合、注意が必要な所があります。
+TypeScript で書かれたソースコードは、最終的に Webpack と gulp を用いて JavaScript にビルドされます。もしあなたが Webpack などのモジュールバンドラを使って Firefox の拡張機能を作る場合、注意が必要な所があります。
 
 Firefox の拡張機能を公開する際、Webpack などのモジュールバンドラーを使ったり minify したりした場合は、元のソースコードの提出が義務付けられています (<a href="https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/Source_Code_Submission" target="_blank" rel="noopener">ソースコードの提出 - Mozilla</a>)。これは、Mozilla 側が拡張機能をレビューする際に必要なためです。
 
-絵文字ジェネレーターでは、gulp のタスクを使って Firefox のストアへ提出する .zip とは別に、ソースコードのみ含まれた .zip を生成して、それを提出しています。
+絵文字ジェネレーターでは、gulp のタスクを使って Firefox のストアへ提出する .zip とは別に、ソースコードのみ含まれた .zip を生成して、それを提出するようにしています。
 
 ```javascript
 gulp.task('zip-archive', () =>
@@ -113,3 +117,5 @@ gulp.task('zip', gulp.parallel('zip-archive', 'zip-source'))
 ### cheerio によるスクレイピング
 ### Contents scripts とウェブページ間の通信
 ### Background scripts と Contents scripts 間の通信
+
+## まとめ
