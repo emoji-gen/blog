@@ -86,6 +86,13 @@
     display: block;
     margin: 40px auto;
   }
+  .highlight {
+    margin: 30px 0;
+    background-color: transparent;
+    pre {
+      white-space: pre-wrap;
+    }
+  }
   @include pc {
     .sp-only {
       display: none;
