@@ -4,7 +4,7 @@ Modified: 2018-12-23 00:00
 Slug: web-extensions
 
 <a href="{filename}/20181223_web-extensions.md" rel="bookmark">
-  <img src="{static}/images/20181223/thumbnail.png" width="300" height="130" alt="ブラウザ拡張機能">
+  <img src="{static}/images/20181223/thumbnail.png" width="300" height="110" alt="ブラウザ拡張機能">
 </a>
 
 <small>このブログは、<a href="https://adventar.org/calendars/2959" target="_blank" rel="noopener">高知工科大学 Advent Calendar 2018</a> の13日目の記事です。</small>
