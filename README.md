@@ -1,4 +1,5 @@
 ## Blog
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/998b4d56553b4d49a086326e54f812af)](https://app.codacy.com/app/pinemz/blog?utm_source=github.com&utm_medium=referral&utm_content=emoji-gen/blog&utm_campaign=Badge_Grade_Settings)
 [![CircleCI](https://circleci.com/gh/emoji-gen/blog/tree/master.svg?style=shield)](https://circleci.com/gh/emoji-gen/blog/tree/master)
 [![Requirements Status](https://requires.io/github/emoji-gen/blog/requirements.svg?branch=master)](https://requires.io/github/emoji-gen/blog/requirements/?branch=master)
 [![dependencies Status](https://david-dm.org/emoji-gen/blog/status.svg?path=theme)](https://david-dm.org/emoji-gen/blog?path=theme)
