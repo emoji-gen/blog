@@ -6,6 +6,10 @@
 [![devDependencies Status](https://david-dm.org/emoji-gen/blog/dev-status.svg)](https://david-dm.org/emoji-gen/blog?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/emoji-gen/blog.svg)](https://greenkeeper.io/)
 [![Osushi](https://img.shields.io/badge/donate-osushi-EA2F57.svg)](https://osushi.love/intent/post/9ad90add99954e62ac79251606c10eec)
 
+:memo: The Ultimate Tech Blog by Emoji Generator
+<br>
+<br>
+
 ## Requirements
 
 - Python `$(cat .python-version)`
