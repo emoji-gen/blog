@@ -123,9 +123,35 @@ gulp.task('zip', gulp.parallel('zip-archive', 'zip-source'))
 
 絵文字ジェネレーターで Slack をスクレイピングしている箇所は、大きく2点あります。ログイン済みの Slack チーム一覧を取得する部分と、絵文字を実際に登録する所です。
 
-以下は、ログイン済みの Slack チーム一覧を取得している部分です。
+以下は、ログイン済みの Slack チーム一覧を取得している部分です (一部省略しています)。
 
-TODO
+```typescript
+export async function searchJoinedTeams(): Promise<ITeam[]> {
+  const res = await fetch('https://slack.com/customize/emoji', {
+    credentials: 'include',
+  })
+  const body = await res.text()
+
+  const $ = cheerio.load(body)
+  const teamAnchors = $('#header_team_nav li:not(#add_team_option) a').toArray()
+  const teams: ITeam[] = teamAnchors
+    .map(_anchor => {
+      const anchor = $(_anchor)
+      const href = anchor.attr('href')
+      const matches = href.match(/\/\/([^\.]+)\.slack\.com/)
+
+      if (matches) {
+        return {
+          name: v.trim(anchor.text()),
+          teamdomain: matches[1],
+        }
+      }
+    })
+    .filter(team => !!team) as ITeam[]
+
+  return teams
+}
+```
 
 HTTPS リクエストの部分には生の <a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Fetch API</a> を利用しています。これは、ブラウザ拡張機能という特性上、サポート対象ブラウザを絞ることができるためです。Polyfill は使っていません。
 
