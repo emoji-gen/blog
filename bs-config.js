@@ -58,19 +58,12 @@ module.exports = {
   'plugins': [],
   'injectChanges': true,
   'startPath': null,
-  'minify': true,
+  'minify': false,
   'host': null,
   'localOnly': false,
   'codeSync': true,
   'timestamps': true,
   'clientEvents': [
-    'scroll',
-    'scroll:element',
-    'input:text',
-    'input:toggles',
-    'form:submit',
-    'form:reset',
-    'click'
   ],
   'socket': {
     'socketIoOptions': {
