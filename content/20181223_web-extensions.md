@@ -66,7 +66,7 @@ WebExtensions API は主要ブラウザでは Google Chrome、Firefox、Microsof
 
 現在、絵文字ジェネレーターの拡張機能は Microsoft Edge に対応していません。これは、対応を検討した時期の Microsoft Edge の WebExtensions API の対応が不十分であったためです。現在は改善しているかもしれません。
 
-もしくは、<a href="https://www.windowscentral.com/microsoft-building-chromium-powered-web-browser-windows-10" target="_blank" rel="noopener">Microsoft Edge が Chromium ベースになる</a> などの事が本当に起きた場合、実装差異は気にしなくて良くなるかもしれません。
+ただし、<a href="https://jp.techcrunch.com/2018/12/07/2018-12-06-microsoft-edge-goes-chromium-and-macos/" target="_blank" rel="noopener">Microsoft Edge は Chromium ベースになるらしい</a> ので、今後は実装差異は気にしなくて良くなるかもしれません。
 
 ## TypeScript による拡張機能開発
 絵文字ジェネレーターのブラウザ拡張機能は TypeScript を使って開発されています。
