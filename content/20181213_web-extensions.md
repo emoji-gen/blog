@@ -1,10 +1,10 @@
 Title: WebExtensions とブラウザ拡張機能、Slack への直接絵文字登録の仕組み
-Date: 2018-12-23 00:00
-Modified: 2018-12-23 00:00
+Date: 2018-12-13 00:00
+Modified: 2018-12-13 00:00
 Slug: web-extensions
 
-<a href="{filename}/20181223_web-extensions.md" rel="bookmark">
-  <img src="{static}/images/20181223/thumbnail.png" width="300" height="110" alt="ブラウザ拡張機能">
+<a href="{filename}/20181213_web-extensions.md" rel="bookmark">
+  <img src="{static}/images/20181213/thumbnail.png" width="300" height="110" alt="ブラウザ拡張機能">
 </a>
 
 <small>このブログは、<a href="https://adventar.org/calendars/2959" target="_blank" rel="noopener">高知工科大学 Advent Calendar 2018</a> の13日目の記事です。</small>
@@ -166,7 +166,7 @@ HTML のパースと DOM 操作には <a href="https://github.com/cheeriojs/chee
 
 ブラウザ拡張機能は、以下のような3レイヤー構成で作られています。レイヤー間は直接の変数参照や関数呼び出しができません。イベントベースの非同期通信によって、やりくりをする必要があります。
 
-<img src="{static}/images/20181223/architecture.png" width="300" height="235" alt="アーキテクチャ">
+<img src="{static}/images/20181213/architecture.png" width="300" height="235" alt="アーキテクチャ">
 
 絵文字ジェネレーターの拡張機能は、特定のページのみで動作することを想定されています。そのため、ウェブページ自体のスクリプトと合わせ、3レイヤーすべてを相互に協調させて動くよう設計する必要があります。
 
