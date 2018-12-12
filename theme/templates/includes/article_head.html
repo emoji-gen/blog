@@ -1,3 +1,4 @@
+{# メタ情報 #}
 <meta name="description" content="{{ article.content|striptags|truncate(DESCRIPTION_MAX_LENGTH) }}">
 <meta name="twitter:title" content="{{ article.title }} - {{ SITENAME }}">
 <meta name="twitter:description" content="{{ article.content|striptags|truncate(DESCRIPTION_MAX_LENGTH) }}">
@@ -6,3 +7,13 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
 <meta property="og:description" content="{{ article.content|striptags|truncate(DESCRIPTION_MAX_LENGTH) }}">
 <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+
+
+{# ページネーション #}
+{% if article.prev_article %}
+<link rel="prev" href="{{ SITEURL }}/{{ article.prev_article.url}}">
+{% endif %}
+
+{% if article.next_article %}
+<link rel="next" href="{{ SITEURL }}/{{ article.next_article.url}}">
+{% endif %}
