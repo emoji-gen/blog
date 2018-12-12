@@ -19,11 +19,15 @@
     display: flex;
     justify-content: flex-end;
     margin: 40px 0 0;
-    .fb_iframe_widget > span {
-      vertical-align: baseline !important;
-    }
     &__item {
       margin: 0 5px 0 0;
+    }
+  }
+
+  &__neighbors {
+    display: flex;
+    &--next-only {
+      justify-content: flex-end;
     }
   }
 }

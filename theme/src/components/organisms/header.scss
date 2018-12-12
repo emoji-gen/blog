@@ -31,7 +31,7 @@ $_color_text_primary: rgb(80, 80, 80);
 @include pc {
   .header {
     padding: 35px 0;
-    width: $dimen-content-width;
+    width: $dimen-body-width;
     justify-content: center;
 
     &__title {

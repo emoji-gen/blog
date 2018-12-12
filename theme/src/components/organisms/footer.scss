@@ -21,7 +21,7 @@ $_color_text_primary: rgb(80, 80, 80);
 @include pc {
   .footer {
     padding: 25px 50px;
-    width: $dimen-content-width;
+    width: $dimen-body-width;
     &__copyright {
       font-size: $font-small;
     }

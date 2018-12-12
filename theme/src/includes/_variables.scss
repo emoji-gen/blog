@@ -28,4 +28,8 @@ $color-shadow-white: rgba(0, 0, 0, 0.2);
 /**
  * Dimensions
  */
-$dimen-content-width: 1000px;
+$dimen-box-margin: 30px;
+$dimen-body-width: 1000px;
+$dimen-sidebar-width: 280px;
+$dimen-content-width:
+  $dimen-body-width - $dimen-sidebar_width - $dimen-box-margin;

@@ -3,9 +3,6 @@
 
 
 @include pc {
-  $_sidebar_width: 280px;
-  $_sidebar_margin: 30px;
-
   .blog {
     &__header {
       margin: 40px 0 0;
@@ -13,14 +10,14 @@
     &__body {
       display: flex;
       margin: 30px auto 0;
-      width: $dimen-content-width;
+      width: $dimen-body-width;
       min-height: 800px;
       &__content {
-        width: $dimen-content-width - $_sidebar_width - $_sidebar_margin;
+        width: $dimen-body-width - $dimen-sidebar_width - $dimen-box-margin;
       }
       &__sidebar {
-        margin: 0 0 0 $_sidebar_margin;
-        width: $_sidebar_width;
+        margin: 0 0 0 $dimen-box-margin;
+        width: $dimen-sidebar-width;
       }
     }
     &__footer {
