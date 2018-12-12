@@ -219,4 +219,4 @@ Background scripts と Contents scripts 間の通信は、公式の API があ�
 
 ブラウザ拡張機能以外にも、絵文字ジェネレーターを便利にする機能があれば、ぜひ作っていきたいと思っています。何か案があれば、ぜひ教えてください。
 
-今後とも、<a href="https://emoji-gen.ninja/">絵文字ジェネレーター</a> をどうぞ宜しくお願いします！
+今後とも、<a href="https://emoji-gen.ninja/" target="_blank" rel="bookmark">絵文字ジェネレーター</a> をどうぞ宜しくお願いします！
