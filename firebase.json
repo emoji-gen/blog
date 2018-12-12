@@ -47,7 +47,16 @@
         ]
       },
       {
-        "source": "/blog/**/*.xml",
+        "source": "/blog/feeds/*.xml",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=600"
+          }
+        ]
+      },
+      {
+        "source": "/blog/*.xml",
         "headers": [
           {
             "key": "Cache-Control",
