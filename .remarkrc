@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "remark-lint": {
+      "no-file-name-irregular-characters": false
+    }
+  }
+}
