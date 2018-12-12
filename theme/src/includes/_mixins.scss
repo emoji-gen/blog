@@ -5,7 +5,7 @@
  * PC 向けスタイル
  */
 @mixin pc {
-  @media (min-width: $dimen-content-width) {
+  @media (min-width: $dimen-body-width) {
     @content;
   }
 }
@@ -14,7 +14,7 @@
  * スマートフォン向け
  */
 @mixin sp {
-  @media not all and (min-width: $dimen-content-width) {
+  @media not all and (min-width: $dimen-body-width) {
     @content;
   }
 }

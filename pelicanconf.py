@@ -38,7 +38,7 @@ JINJA_FILTERS = {
     'squash': do_squash,
 }
 PATH = 'content'
-PLUGINS = ['minify', 'sitemap', 'summary']
+PLUGINS = ['minify', 'neighbors', 'sitemap', 'summary']
 PLUGIN_PATHS = ['externals/plugins']
 SITENAME = '絵文字ジェネレーター 開発者ブログ'
 

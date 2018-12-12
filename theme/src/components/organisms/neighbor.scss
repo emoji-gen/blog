@@ -1,0 +1,26 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+
+.neighbor {
+  @include box;
+  box-sizing: border-box;
+  margin: $dimen-box-margin 0 0;
+  padding: 20px 25px;
+  width: ($dimen-content-width - $dimen-box-margin) / 2;
+
+  &--prev {
+    margin-right: $dimen-box-margin;
+  }
+  &__heading {
+    margin: 0 0 25px;
+    color: $color-blue-dark;
+    font-size: $font-medium;
+  }
+  &__link {
+    line-height: 1.4;
+    color: $color-gray;
+    font-size: $font-medium;
+    text-decoration: none;
+  }
+}

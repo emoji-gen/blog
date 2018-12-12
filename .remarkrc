@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "remark-lint": {
+      "list-item-indent": false,
+      "no-file-name-irregular-characters": false
+    }
+  }
+}
