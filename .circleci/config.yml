@@ -52,6 +52,11 @@ jobs:
           name: Deployment
           command: |
             if [ "$CIRCLE_BRANCH" == "master" ]; then
+              pip3 install -q slackweb
+              python3 ./scripts/notify.py started
+
               yarn global add firebase-tools
               firebase deploy --non-interactive
+
+              python3 ./scripts/notify.py successful
             fi
