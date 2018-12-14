@@ -30,13 +30,13 @@
 @include sp {
   .blog {
     &__body {
-      margin: 20px 0 0;
+      margin: $dimen-box-margin-sp 0 0;
       &__sidebar {
-        margin: 20px 0 0;
+        margin: $dimen-box-margin-sp 0 0;
       }
     }
     &__footer {
-      margin: 20px 0 0;
+      margin: $dimen-box-margin-sp 0 0;
     }
   }
 }
