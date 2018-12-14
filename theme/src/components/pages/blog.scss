@@ -13,10 +13,10 @@
       width: $dimen-body-width;
       min-height: 800px;
       &__content {
-        width: $dimen-body-width - $dimen-sidebar_width - $dimen-box-margin;
+        width: $dimen-body-width - $dimen-sidebar-width - $dimen-box-margin-pc;
       }
       &__sidebar {
-        margin: 0 0 0 $dimen-box-margin;
+        margin: 0 0 0 $dimen-box-margin-pc;
         width: $dimen-sidebar-width;
       }
     }

@@ -23,10 +23,10 @@
 
 @include pc {
   .neighbor {
-    margin: $dimen-box-margin 0 0;
-    width: ($dimen-content-width - $dimen-box-margin) / 2;
+    margin: $dimen-box-margin-pc 0 0;
+    width: ($dimen-content-width - $dimen-box-margin-pc) / 2;
     &--prev {
-      margin-right: $dimen-box-margin;
+      margin-right: $dimen-box-margin-pc;
     }
   }
 }
