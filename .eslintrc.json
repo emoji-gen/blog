@@ -1,5 +1,6 @@
 {
+  "extends": "standard",
   "rules": {
-    "quotes": "single"
+    "comma-dangle": ["off"]
   }
 }
