@@ -1,7 +1,16 @@
 {
   "name": "@emoji-gen/blog",
+  "scripts": {
+    "test": "eslint *.js theme/*.js"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "foreman": "^3.0.1"
   },
   "repository": "https://github.com/emoji-gen/blog.git",

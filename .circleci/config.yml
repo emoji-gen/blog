@@ -38,6 +38,10 @@ jobs:
             git checkout yarn.lock
             git checkout theme/yarn.lock
       - run:
+          name: Test
+          command: |
+            yarn test
+      - run:
           name: Build
           command: |
             make

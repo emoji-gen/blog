@@ -17,3 +17,11 @@
 {% if article.next_article %}
   <link rel="next" href="{{ SITEURL }}/{{ article.next_article.url}}">
 {% endif %}
+
+
+{# Google Analytics #}
+{% filter squash %}
+  <script>
+    gtag('set', {'content_group2': 'article'});
+  </script>
+{% endfilter %}
