@@ -1,5 +1,9 @@
 {% filter squash %}
-  {% if ENV != 'development' %}
+  {% if ENV == 'development' %}
+    <script>
+      function gtag(){}
+    </script>
+  {% else %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82501423-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

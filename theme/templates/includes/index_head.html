@@ -34,3 +34,11 @@
 {% if articles_page.has_next() %}
   <link rel="next" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">
 {% endif %}
+
+
+{# Google Analytics #}
+{% filter squash %}
+  <script>
+    gtag('set', {'content_group2': 'index'});
+  </script>
+{% endfilter %}
