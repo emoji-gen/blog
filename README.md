@@ -36,6 +36,9 @@ $ pip install -r requirements-dev.txt
 $ yarn
 $ cd theme && yarn
 
+# Setup submodules
+$ git submodule update --init --recursive
+
 # Development
 $ make dev
 ```
