@@ -24,10 +24,21 @@
     }
   }
 
+  /**
+   * 前後の記事
+   */
   &__neighbors {
-    display: flex;
     &--next-only {
       justify-content: flex-end;
+    }
+  }
+}
+
+
+@include pc {
+  .article {
+    &__neighbors {
+      display: flex;
     }
   }
 }
