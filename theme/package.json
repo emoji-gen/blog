@@ -16,7 +16,7 @@
     "@types/webpack": "^4.4.19",
     "autoprefixer": "^9.3.1",
     "clean-webpack-plugin": "^2.0.0",
-    "css-loader": "^2.0.0",
+    "css-loader": "^3.0.0",
     "event-hooks-webpack-plugin": "^2.1.1",
     "expose-loader": "^0.7.5",
     "mini-css-extract-plugin": "^0.5.0",
