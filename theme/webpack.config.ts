@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import { join } from 'path'
 
 import * as webpack from 'webpack'
-import * as CleanWebpackPlugin from 'clean-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import * as EventHooksPlugin from 'event-hooks-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
@@ -106,7 +106,10 @@ const configuration: webpack.Configuration = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin([ 'dist/*.css', 'dist/*.js' ], { verbose: false }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [ 'dist/*.css', 'dist/*.js' ],
+      verbose: false,
+    }),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
