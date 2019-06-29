@@ -50,7 +50,7 @@ $ make dev
 $ pygmentize -S trac -f html -a .highlight > theme/src/generated/pygments.css
 ```
 
-## Deployment
+### Deployment
 
 ```bash
 $ yarn global add firebase-tools
