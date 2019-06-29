@@ -11,7 +11,7 @@
 
 :memo: The Ultimate Tech Blog by Emoji Generator
 
-<img src="assets/resized.jpg" width="640" height="350">
+![](assets/resized.jpg)<br>
 <sup><sup>&copy; Alexander Batuev/123RF.COM</sup></sup>
 <br>
 <br>
