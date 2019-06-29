@@ -10,6 +10,9 @@
 [![Beerpay](https://beerpay.io/emoji-gen/blog/badge.svg?style=flat)](https://beerpay.io/emoji-gen/blog)
 
 :memo: The Ultimate Tech Blog by Emoji Generator
+
+<img src="assets/resized.jpg" width="640" height="350">
+<sup><sup>&copy; Alexander Batuev/123RF.COM</sup></sup>
 <br>
 <br>
 
