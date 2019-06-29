@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: emojigen/node-py23:node11.1.0-py2.7.15-py3.7.0
+      - image: emojigen/node-py23:node12.5.0-py2.7.16-py3.7.3
     environment:
       GIT_TERMINAL_PROMPT: 0
       TZ: Asia/Tokyo
