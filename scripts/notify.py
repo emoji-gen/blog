@@ -32,7 +32,7 @@ def _notify(text, color):
     attachment = {
         'color': color,
         'text': text,
-        'author_name': author_blog,
+        'author_name': author_name,
     }
     slack.notify(
         username=username,
