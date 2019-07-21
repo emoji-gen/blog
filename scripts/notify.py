@@ -4,8 +4,9 @@ import os
 import sys
 import slackweb
 
-circleci_icon = 'https://i.imgur.com/FLjAA35.png'
-firebase_mini_icon = 'https://i.imgur.com/FYFxjXl.png'
+author_name = 'blog'
+icon_url = 'https://i.imgur.com/FLjAA35.png'
+username = 'CircleCI'
 
 
 def main():
@@ -31,12 +32,11 @@ def _notify(text, color):
     attachment = {
         'color': color,
         'text': text,
-        'author_name': 'blog',
-        'author_icon': firebase_mini_icon,
+        'author_name': author_blog,
     }
     slack.notify(
-        username='CircleCI',
-        icon_url=circleci_icon,
+        username=username,
+        icon_url=icon_url,
         attachments=[attachment]
     )
 
