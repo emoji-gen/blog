@@ -23,7 +23,10 @@ jobs:
             echo "NPM v$(npm -v | tr -d v)"
             echo "Yarn v$(yarn --version | tr -d v)"
       - restore_cache:
-          key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
+          keys:
+            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}
+            - v1-{{ arch }}
       - run:
           name: Install dependencies (Python)
           command: |
@@ -46,7 +49,7 @@ jobs:
           command: |
             make
       - save_cache:
-          key: emoji-gen/blog/{{ arch }}/{{ checksum "requirements-dev.txt" }}/{{ checksum "yarn.lock" }}/{{ checksum "theme/yarn.lock" }}
+          key: v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
           paths:
             - ~/workspace/node_modules
             - ~/workspace/theme/node_modules
