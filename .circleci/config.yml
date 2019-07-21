@@ -53,14 +53,31 @@ jobs:
             - ~/.cache/yarn/
             - ~/.cache/pip/
       - run:
+          name: Notify deploy started
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              pip3 install -q slackweb
+              python3 scripts/notify.py started
+            fi
+      - run:
           name: Deployment
           command: |
             if [ "$CIRCLE_BRANCH" == "master" ]; then
-              pip3 install -q slackweb
-              python3 ./scripts/notify.py started
-
               yarn global add firebase-tools
               firebase deploy --non-interactive
-
-              python3 ./scripts/notify.py successful
             fi
+      - run:
+          name: Notify deploy successful
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              pip3 install -q slackweb
+              python3 scripts/notify.py successful
+            fi
+      - run:
+          name: Notify deploy failed
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              pip3 install -q slackweb
+              python3 scripts/notify.py failed
+            fi
+          when: on_fail
