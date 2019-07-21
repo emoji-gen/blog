@@ -1,4 +1,4 @@
 Markdown
-pelican>=4.0.1
+pelican>=4.1.0
 Jinja2>=2.10.1
 pelican-minify
