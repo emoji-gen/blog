@@ -6,6 +6,7 @@
 [![devDependencies Status](https://david-dm.org/emoji-gen/blog/dev-status.svg)](https://david-dm.org/emoji-gen/blog?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/emoji-gen/blog.svg)](https://greenkeeper.io/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/998b4d56553b4d49a086326e54f812af)](https://app.codacy.com/app/pinemz/blog?utm_source=github.com&utm_medium=referral&utm_content=emoji-gen/blog&utm_campaign=Badge_Grade_Settings)
+[![codebeat badge](https://codebeat.co/badges/351d5ac7-cc7b-4f98-b08d-f96072f7c9a0)](https://codebeat.co/projects/github-com-emoji-gen-blog-master)
 [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](https://opensource.org/licenses/MIT)
 [![Beerpay](https://beerpay.io/emoji-gen/blog/badge.svg?style=flat)](https://beerpay.io/emoji-gen/blog)
 
