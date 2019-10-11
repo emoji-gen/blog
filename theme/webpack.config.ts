@@ -69,11 +69,13 @@ const configuration: webpack.Configuration = {
           {
             loader: 'sass-loader',
             options: {
-              data: `
+              prependData: `
                 $site-url: '${siteUrl}';
                 $theme-url: '${themeUrl}';
               `,
-              includePaths: [ join(__dirname, 'src') ],
+              sassOptions: {
+                includePaths: [ join(__dirname, 'src') ],
+              },
             },
           },
         ],
