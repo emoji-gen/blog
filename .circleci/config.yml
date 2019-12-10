@@ -24,9 +24,9 @@ jobs:
             echo "Yarn v$(yarn --version | tr -d v)"
       - restore_cache:
           keys:
-            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
-            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}
-            - v1-{{ arch }}
+            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}
+            - v2-{{ arch }}
       - run:
           name: Install dependencies (Python)
           command: |
@@ -49,7 +49,7 @@ jobs:
           command: |
             make
       - save_cache:
-          key: v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+          key: v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
           paths:
             - ~/workspace/node_modules
             - ~/workspace/theme/node_modules
