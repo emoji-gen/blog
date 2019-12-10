@@ -3,17 +3,11 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: emojigen/node-py23:node12.5.0-py2.7.16-py3.7.3
+      - image: circleci/python:3.8.0-buster-node
     environment:
       GIT_TERMINAL_PROMPT: 0
       TZ: Asia/Tokyo
     steps:
-      - checkout
-      - run:
-          name: Checkout submodules
-          command: |
-            JOBS=$(($(nproc) * 3))
-            git submodule update --init --recursive --jobs=$JOBS
       - run:
           name: System information
           command: |
@@ -22,14 +16,22 @@ jobs:
             echo "Node v$(node -v | tr -d v)"
             echo "NPM v$(npm -v | tr -d v)"
             echo "Yarn v$(yarn --version | tr -d v)"
+      - checkout
+      - run:
+          name: Checkout submodules
+          command: |
+            JOBS=$(($(nproc) * 3))
+            git submodule update --init --recursive --jobs=$JOBS
       - restore_cache:
           keys:
-            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
-            - v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}
-            - v1-{{ arch }}
+            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}
+            - v2-{{ arch }}
       - run:
           name: Install dependencies (Python)
           command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
             pip3 install -q -r requirements-dev.txt
       - run:
           name: Install dependencies (Node)
@@ -49,7 +51,7 @@ jobs:
           command: |
             make
       - save_cache:
-          key: v1-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+          key: v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
           paths:
             - ~/workspace/node_modules
             - ~/workspace/theme/node_modules
