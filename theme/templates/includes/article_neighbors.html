@@ -2,7 +2,9 @@
   {% if article.prev_article %}
     <div class="neighbor neighbor--prev">
       <h2 class="neighbor__heading">
-        前の記事
+        <a href="{{ SITEURL }}/{{ article.prev_article.url}}" rel="bookmark">
+          前の記事
+        </a>
       </h2>
       <a href="{{ SITEURL }}/{{ article.prev_article.url}}" rel="bookmark" class="neighbor__link">
         {{ article.prev_article.title }}
@@ -13,7 +15,9 @@
   {% if article.next_article %}
     <div class="neighbor neighbor--next">
       <h2 class="neighbor__heading">
-        次の記事
+        <a href="{{ SITEURL }}/{{ article.next_article.url}}" rel="bookmark">
+          次の記事
+        </a>
       </h2>
       <a href="{{ SITEURL }}/{{ article.next_article.url}}" rel="bookmark" class="neighbor__link">
         {{ article.next_article.title }}

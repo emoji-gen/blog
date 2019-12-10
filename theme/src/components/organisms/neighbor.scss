@@ -9,8 +9,11 @@
 
   &__heading {
     margin: 0 0 25px;
-    color: $color-blue-dark;
     font-size: $font-medium;
+    a {
+      color: $color-blue-dark;
+      text-decoration: none;
+    }
   }
   &__link {
     line-height: 1.4;
