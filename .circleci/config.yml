@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: emojigen/node-py23:node12.5.0-py2.7.16-py3.7.3
+      - image: circleci/3.8.0-buster-node
     environment:
       GIT_TERMINAL_PROMPT: 0
       TZ: Asia/Tokyo
