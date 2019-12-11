@@ -1,3 +1,3 @@
-[submodule "vendor/plugins"]
-	path = externals/plugins
+[submodule "plugins"]
+	path = plugins
 	url = https://github.com/getpelican/pelican-plugins.git
