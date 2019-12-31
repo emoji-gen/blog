@@ -71,13 +71,6 @@
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
-      ],
-      "redirects": [
-        {
-          "source": "/posts/20181127/ignited.html",
-          "destination": "/posts/20181127/pelican.html",
-          "type": 301
-        }
       ]
     }
   ]
