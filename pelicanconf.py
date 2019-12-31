@@ -43,9 +43,9 @@ PLUGIN_PATHS = ['plugins']
 SITENAME = '絵文字ジェネレーター 開発者ブログ'
 
 if ENV == 'production':
-    SITEURL = 'https://emoji-gen.ninja/blog'
+    SITEURL = 'https://blog.emoji-gen.ninja'
 else:
-    SITEURL = '/blog'
+    SITEURL = ''
 
 
 #

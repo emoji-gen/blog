@@ -5,7 +5,7 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 PUBLICDIR=$(BASEDIR)/public
-OUTPUTDIR=$(BASEDIR)/public/blog
+OUTPUTDIR=$(BASEDIR)/public
 CONFFILE=$(BASEDIR)/pelicanconf.py
 
 
@@ -48,10 +48,10 @@ content-prod:
 serve:
 	mkdir -p $(PUBLICDIR)
 ifdef PORT
-	@echo Serving on http://0.0.0.0:$(PORT)/blog/ ...
+	@echo Serving on http://0.0.0.0:$(PORT)/ ...
 	cd $(PUBLICDIR) && $(PY) -m http.server $(PORT)
 else
-	@echo Serving on http://0.0.0.0:8000/blog/ ...
+	@echo Serving on http://0.0.0.0:8000/ ...
 	cd $(PUBLICDIR) && $(PY) -m http.server 8000
 endif
 

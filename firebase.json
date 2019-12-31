@@ -22,7 +22,7 @@
           ]
         },
         {
-          "source": "/blog/",
+          "source": "/",
           "headers": [
             {
               "key": "Cache-Control",
@@ -31,7 +31,7 @@
           ]
         },
         {
-          "source": "/blog/**/*.html",
+          "source": "/**/*.html",
           "headers": [
             {
               "key": "Cache-Control",
@@ -40,7 +40,7 @@
           ]
         },
         {
-          "source": "/blog/**/*.@(png|jpg)",
+          "source": "/**/*.@(png|jpg)",
           "headers": [
             {
               "key": "Cache-Control",
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "source": "/blog/feeds/*.xml",
+          "source": "/feeds/*.xml",
           "headers": [
             {
               "key": "Cache-Control",
@@ -58,7 +58,7 @@
           ]
         },
         {
-          "source": "/blog/*.xml",
+          "source": "/*.xml",
           "headers": [
             {
               "key": "Cache-Control",
@@ -74,8 +74,8 @@
       ],
       "redirects": [
         {
-          "source": "/blog/posts/20181127/ignited.html",
-          "destination": "/blog/posts/20181127/pelican.html",
+          "source": "/posts/20181127/ignited.html",
+          "destination": "/posts/20181127/pelican.html",
           "type": 301
         }
       ]
