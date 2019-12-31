@@ -20,6 +20,7 @@
 ## Requirements
 
 - Python `$(cat .python-version)`
+- [Poetry](https://python-poetry.org/)
 - Node `$(cat .node-version)`
 - Yarn
 
@@ -32,9 +33,7 @@
 
 ```bash
 # Setup Python
-$ python -m venv venv
-$ . venv/bin/activate
-$ pip install -r requirements-dev.txt
+$ poetry install
 
 # Setup Node
 $ yarn
