@@ -1,5 +1,14 @@
 {
   "projects": {
-    "production": "blog-88778"
+    "production": "emoji-gen"
+  },
+  "targets": {
+    "emoji-gen": {
+      "hosting": {
+        "blog": [
+          "eg-blog"
+        ]
+      }
+    }
   }
 }

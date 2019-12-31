@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "blog"
+version = "0.1.0"
+description = ""
+authors = ["Emoji Generator <ultimate.emoji.gen@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+Markdown = "^3.1.1"
+pelican = "^4.2.0"
+Jinja2 = "^2.10.3"
+pelican-minify = "^0.9"
+joblib = "^0.14.1"
+bs4 = "^0.0.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

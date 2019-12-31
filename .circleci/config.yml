@@ -6,6 +6,7 @@ jobs:
       - image: circleci/python:3.8.0-buster-node
     environment:
       GIT_TERMINAL_PROMPT: 0
+      POETRY_VIRTUALENVS_IN_PROJECT: true
       TZ: Asia/Tokyo
     steps:
       - run:
@@ -24,15 +25,16 @@ jobs:
             git submodule update --init --recursive --jobs=$JOBS
       - restore_cache:
           keys:
-            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
-            - v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}
-            - v2-{{ arch }}
+            - v3-{{ arch }}-{{ checksum "poetry.lock" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+            - v3-{{ arch }}-{{ checksum "poetry.lock" }}
+            - v3-{{ arch }}
       - run:
           name: Install dependencies (Python)
           command: |
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
-            pip3 install -q -r requirements-dev.txt
+            pip3 install -q poetry
+            poetry install
       - run:
           name: Install dependencies (Node)
           command: |
@@ -51,8 +53,9 @@ jobs:
           command: |
             make
       - save_cache:
-          key: v2-{{ arch }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
+          key: v3-{{ arch }}-{{ checksum "poetry.lock" }}-{{ checksum "yarn.lock" }}-{{ checksum "theme/yarn.lock" }}
           paths:
+            - ~/workspace/.venv/
             - ~/workspace/node_modules
             - ~/workspace/theme/node_modules
             - ~/.cache/yarn/
