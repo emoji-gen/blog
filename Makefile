@@ -21,23 +21,33 @@ dev:
 
 
 .PHONY: theme
-theme:
+theme: yarn-install
 	cd theme && yarn start
 
 
 .PHONY: theme-prod
-theme-prod:
+theme-prod: yarn-install
 	cd theme && yarn run build
 
 
 .PHONY: content
-content:
-	PYTHONUNBUFFERED=no $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) -r $(PELICANOPTS)
+content: poetry-install
+	PYTHONUNBUFFERED=no poetry run $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) -r $(PELICANOPTS)
 
 
 .PHONY: content-prod
-content-prod:
-	PYTHON_ENV=production $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) $(PELICANOPTS)
+content-prod: poetry-install
+	PYTHON_ENV=production poetry run $(PELICAN) $(INPUTDIR) --output $(OUTPUTDIR) --settings $(CONFFILE) $(PELICANOPTS)
+
+
+.PHONY: poetry-install
+poetry-install:
+	poetry install
+
+
+.PHONY: yarn-install
+yarn-install:
+	yarn install
 
 
 .PHONY: clean
