@@ -1,81 +1,84 @@
 {
-  "hosting": {
-    "public": "public",
-    "headers": [
-      {
-        "source": "**/*",
-        "headers": [
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          },
-          {
-            "key": "X-XSS-Protection",
-            "value": "1; mode=block"
-          }
-        ]
-      },
-      {
-        "source": "/blog/",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=180"
-          }
-        ]
-      },
-      {
-        "source": "/blog/**/*.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=600"
-          }
-        ]
-      },
-      {
-        "source": "/blog/**/*.@(png|jpg)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, immutable, max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "/blog/feeds/*.xml",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=600"
-          }
-        ]
-      },
-      {
-        "source": "/blog/*.xml",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600, stale-if-error=3600"
-          }
-        ]
-      }
-    ],
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "redirects": [
-      {
-        "source": "/blog/posts/20181127/ignited.html",
-        "destination": "/blog/posts/20181127/pelican.html",
-        "type": 301
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "blog",
+      "public": "public",
+      "headers": [
+        {
+          "source": "**/*",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            }
+          ]
+        },
+        {
+          "source": "/blog/",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=180"
+            }
+          ]
+        },
+        {
+          "source": "/blog/**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=600"
+            }
+          ]
+        },
+        {
+          "source": "/blog/**/*.@(png|jpg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, immutable, max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "/blog/feeds/*.xml",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=600"
+            }
+          ]
+        },
+        {
+          "source": "/blog/*.xml",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600, stale-if-error=3600"
+            }
+          ]
+        }
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "redirects": [
+        {
+          "source": "/blog/posts/20181127/ignited.html",
+          "destination": "/blog/posts/20181127/pelican.html",
+          "type": 301
+        }
+      ]
+    }
+  ]
 }
