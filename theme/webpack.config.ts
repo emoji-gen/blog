@@ -28,7 +28,7 @@ const prodSiteUrl =
     })
     .filter(v => !!v)
 
-const siteUrl = isDev ? '/blog' : prodSiteUrl
+const siteUrl = isDev ? '' : prodSiteUrl
 const themeUrl = siteUrl + '/theme'
 
 
