@@ -91,10 +91,6 @@
     background-color: rgba(27,31,35,.05);
     font-size: 85%;
   }
-  table {
-    border-collapse: separate;
-    border-spacing: 10px 10px;
-  }
   .highlight {
     margin: 30px 0;
     background-color: transparent;
@@ -110,6 +106,43 @@
   @include sp {
     .pc-only {
       display: none;
+    }
+  }
+
+  /**
+   * Article : Body : Table
+   */
+  @include pc {
+    table {
+      margin: 40px auto;
+      border-collapse: separate;
+      border-spacing: 10px 10px;
+    }
+  }
+  @include sp {
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      thead {
+        tr {
+          :first-child {
+            padding: 0;
+          }
+          td, th {
+            padding: 0 0 0 8px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          :first-child {
+            padding: 8px 0 0 0;
+          }
+          td, th {
+            padding: 8px 0 0 8px;
+          }
+        }
+      }
     }
   }
 }
