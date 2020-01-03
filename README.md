@@ -20,8 +20,10 @@
 
 - Python `$(cat .python-version)`
 - [Poetry](https://python-poetry.org/)
+  - If you dont't have it, try `$ pip install poetry`
 - Node `$(cat .node-version)`
-- Yarn
+- [Yarn](https://yarnpkg.com/)
+  - If you dont't have it, try `$ npm install -g yarn`
 
 ## Libraries
 
