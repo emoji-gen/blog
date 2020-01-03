@@ -27,7 +27,7 @@
 
 ## Libraries
 
-- [Pelican](https://github.com/getpelican/pelican)
+- [Pelican](https://github.com/getpelican/pelican) - Static site generator written by Python
 - [Normalize.css](https://necolas.github.io/normalize.css/)
 
 ## Getting started
