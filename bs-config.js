@@ -13,6 +13,7 @@
  |
  */
 const { join } = require('path')
+const rewriteModule = require('http-rewrite-middleware')
 
 module.exports = {
   'ui': false,
@@ -31,7 +32,14 @@ module.exports = {
   'server': false,
   'proxy': 'localhost:8000',
   'port': 3000,
-  'middleware': false,
+  'middleware': [
+    rewriteModule.getMiddleware([
+      {
+        from: '^/favicon.ico',
+        to: '/theme/favicon.ico',
+      },
+    ]),
+  ],
   'serveStatic': [],
   'ghostMode': false,
   'logLevel': 'info',

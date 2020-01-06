@@ -1419,6 +1419,11 @@ http-proxy@^1.17.0:
     follow-redirects "^1.0.0"
     requires-port "^1.0.0"
 
+http-rewrite-middleware@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/http-rewrite-middleware/-/http-rewrite-middleware-0.1.6.tgz#cb2965aafa91ebd4c610b99580aa187812da107c"
+  integrity sha1-yyllqvqR69TGELmVgKoYeBLaEHw=
+
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
