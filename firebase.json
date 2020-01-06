@@ -71,6 +71,12 @@
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/favicon.ico",
+          "destination": "/theme/favicon.ico"
+        }
       ]
     }
   ]
