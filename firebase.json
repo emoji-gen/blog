@@ -78,8 +78,8 @@
           "destination": "/theme/favicon.ico"
         },
         {
-          "source": "/sitemap.xml",
-          "destination": "/theme/sitemap.xml"
+          "source": "/robots.xml",
+          "destination": "/theme/robots.xml"
         }
       ]
     }
