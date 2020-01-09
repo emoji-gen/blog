@@ -76,6 +76,10 @@
         {
           "source": "/favicon.ico",
           "destination": "/theme/favicon.ico"
+        },
+        {
+          "source": "/sitemap.xml",
+          "destination": "/theme/sitemap.xml"
         }
       ]
     }
