@@ -7,6 +7,8 @@ import slackweb
 author_name = 'blog'
 icon_url = 'https://i.imgur.com/FLjAA35.png'
 username = 'CircleCI'
+website_url = 'https://blog.emoji-gen.ninja'
+healthcheck_url = 'https://blog.emoji-gen.ninja/healthcheck'
 
 
 def main():
@@ -39,11 +41,11 @@ def _notify(text, color, show_urls=True):
         attachment['fields'] = [
             {
                 'title': 'Website',
-                'value': 'https://blog.emoji-gen.ninja',
+                'value': website_url,
             },
             {
                 'title': 'Healthcheck',
-                'value': 'https://blog.emoji-gen.ninja/healthcheck',
+                'value': healthcheck_url,
             },
         ]
 
