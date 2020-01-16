@@ -33,6 +33,16 @@ def _notify(text, color):
         'color': color,
         'text': text,
         'author_name': author_name,
+        'fields': [
+            {
+                'title': 'Website',
+                'value': 'https://blog.emoji-gen.ninja',
+            },
+            {
+                'title': 'Healthcheck',
+                'value': 'https://blog.emoji-gen.ninja/healthcheck',
+            },
+        ],
     }
     slack.notify(
         username=username,
