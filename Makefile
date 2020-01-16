@@ -42,6 +42,9 @@ content-prod: poetry-install
 
 .PHONY: poetry-install
 poetry-install:
+	if ! poetry --version; then \
+		pip install poetry; \
+	fi
 	poetry install
 
 
