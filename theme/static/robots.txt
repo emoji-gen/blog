@@ -1,2 +1,6 @@
 User-agent: *
+Disallow: /healthcheck
+Disallow: /theme/favicon.ico
+Disallow: /theme/healthcheck
+Disallow: /theme/robots.txt
 
