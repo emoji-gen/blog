@@ -12,7 +12,7 @@ username = 'CircleCI'
 def main():
     message = sys.argv[1]
     if message == 'started':
-        _notify('Deploy started', '#66d3e4')
+        _notify('Deploy started', '#66d3e4', show_urls=False)
     elif message == 'successful':
         _notify('Deploy successful', '#41aa58')
     elif message == 'failed':
@@ -21,7 +21,7 @@ def main():
         raise RuntimeError('invalid message')
 
 
-def _notify(text, color):
+def _notify(text, color, show_urls=True):
     if 'CIRCLE_BUILD_URL' in os.environ:
         text += ' <{}|#{}>'.format(
             os.environ['CIRCLE_BUILD_URL'],
@@ -33,7 +33,10 @@ def _notify(text, color):
         'color': color,
         'text': text,
         'author_name': author_name,
-        'fields': [
+    }
+
+    if show_urls:
+        attachment['fields'] = [
             {
                 'title': 'Website',
                 'value': 'https://blog.emoji-gen.ninja',
@@ -42,8 +45,8 @@ def _notify(text, color):
                 'title': 'Healthcheck',
                 'value': 'https://blog.emoji-gen.ninja/healthcheck',
             },
-        ],
-    }
+        ]
+
     slack.notify(
         username=username,
         icon_url=icon_url,
