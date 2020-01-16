@@ -38,6 +38,10 @@ module.exports = {
         from: '^/favicon.ico',
         to: '/theme/favicon.ico',
       },
+      {
+        from: '^/healthcheck',
+        to: '/theme/healthcheck',
+      },
     ]),
   ],
   'serveStatic': [],
